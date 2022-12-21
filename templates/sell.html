@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% load crispy_forms_filters %}
+{% load static %}
+
+{% block title %}<title> Sell Vinyl </title>{% endblock %}
+
+{% block content %}
+    {% load crispy_forms_tags %}
+    <body>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet"/>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="{% static 'smart-selects/admin/js/bindfields.js' %}"></script>
+    <script src="{% static 'smart-selects/admin/js/chainedfk.js' %}"></script>
+    <br>
+    {{ form.media.css }}
+    <style>
+        input, select {
+            width: 20%
+        }
+    </style>
+
+    <h1 id="signin_text">Add vinyl for sale</h1>
+    <form method="post" action="{% url 'sell' %}" enctype="multipart/form-data" class="card p-4 mt-5">
+        <div class="row">
+            {% for field,errors in form.errors.items %}
+                {% for error in errors %}
+                    <p class="messages alert alert-danger" style="text-align: center;">{{ error|striptags }}</p>
+                {% endfor %}
+            {% endfor %}
+            <div class="col-6">{{ form.record_label|as_crispy_field }}</div>
+            <div class="col m-auto">Label not in list? <a href="{% url 'label add' %}?next={{ request.path }}">Add new
+                label</a></div>
+            <br>
+            <div class="col-6">{{ form.artist|as_crispy_field }}</div>
+            <div class="col m-auto">Artist not in list? <a href="{% url 'artist add' %}?next={{ request.path }}">Add new
+                artist</a></div>
+            <div class="col-6"> {{ form.title|as_crispy_field }}</div>
+            <div class="col-6">{{ form.cat_number|as_crispy_field }}</div>
+            <div class="col-6">{{ form.release_date|as_crispy_field }}</div>
+            <div class="col-6">{{ form.cover_art|as_crispy_field }}</div>
+            <div class="col-6">{{ form.genre|as_crispy_field }}</div>
+            <div class="col-6">{{ form.price|as_crispy_field }}</div>
+            <div class="col-6">{{ form.style|as_crispy_field }}</div>
+            <div class="col-6">{{ form.tracklist|as_crispy_field }}</div>
+            <div class="col-6">{{ form.quantity|as_crispy_field }}</div>
+            <div class="col-6">{{ form.condition|as_crispy_field }}</div>
+        </div>
+        {#                <p class="input_field">{{ form.record_label.label_tag }} {{ form.record_label }}</p>#}
+        {#                <p class="input_field">Label not in list? <a href="{% url 'label add' %}?next={{ request.path }}">Add new label</a></p>#}
+        {#                <p class="input_field">{{ form.artist.label_tag }} {{ form.artist }}</p>#}
+        {#                <p class="input_field">Artist not in list? <a href="{% url 'artist add' %}?next={{ request.path }}">Add new artist</a></p>#}
+        {#                <p class="input_field">{{ form.title.label_tag }} {{ form.title }}</p>#}
+        {#                <p class="input_field">{{ form.cat_number.label_tag }} {{ form.cat_number }}</p>#}
+        {#                <p class="input_field">{{ form.release_date.label_tag }} {{ form.release_date }}</p>#}
+        {#                <p class="input_field">{{ form.cover_art.label_tag }} {{ form.cover_art }}</p>#}
+        {#                <p class="input_field">{{ form.price.label_tag }} {{ form.price }}</p>#}
+        {#                <p class="input_field">{{ form.genre.label_tag }} {{ form.genre }}</p>#}
+        {#                <p class="input_field">{{ form.style.label_tag }} {{ form.style }}</p>#}
+        {#                <p class="input_field">{{ form.tracklist.label_tag }} {{ form.tracklist }}</p>#}
+        {#                <p class="input_field">{{ form.quantity.label_tag }} {{ form.quantity }}</p>#}
+        {#                <p class="input_field">{{ form.condition.label_tag }} {{ form.condition }}</p>#}
+        <button type="submit" class="btn btn-dark" style="align-content: center">Submit</button>
+        {% csrf_token %}
+    </form>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    {{ form.media.js }}
+
+
+    </body>
+{% endblock %}
+
+
+
+
+{#{% for field in form %}#}
+{#    <div>#}
+{#        {{ field.errors }}#}
+{#        {{ field.label_tag }} {{ field }}#}
+{#        {% if field.labe_tag == 'Artist' %}#}
+{#            Add new artist#}
+{#        {% endif %}#}
+{#    </div>#}
+{#{% endfor %}#}
+

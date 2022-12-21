@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load crispy_forms_filters %}
+{% block content %}
+    <body>
+    <br>
+    <h1 class="text-center">Add Label</h1>
+    <form method="post" action="{% url 'label add' %}" enctype="multipart/form-data" class="card p-4 mx-5">
+        {% for field,errors in form.errors.items %}
+            {% for error in errors %}
+                <p class="messages alert alert-danger" style="text-align: center;">{{ error|striptags }}</p>
+            {% endfor %}
+        {% endfor %}
+        <div class="row">
+            <div>{{ form.name|as_crispy_field }}</div>
+            <div>{{ form.description|as_crispy_field }}</div>
+            <div>{{ form.website|as_crispy_field }}</div>
+            <div>{{ form.logo|as_crispy_field }}</div>
+        </div>
+        <input type="hidden" name="next" value="{{ next }}">
+        <button type="submit" class="btn btn-dark" style="align-content: center">Submit</button>
+        {% csrf_token %}
+    </form>
+    </body>
+{% endblock %}

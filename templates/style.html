@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <br>
+
+    <div class="d-inline-flex p-2 bd-highlight">
+        <div class="row justify-content-center">
+            <div class="col-md-9">
+                <div><h1 style="text-align: center">{{ style.name }}</h1></div>
+                <hr>
+                <div><h5>Genre: <a href="{% url 'genre page' slug=style.genre.slug %}">{{ style.genre }}</a></h5></div>
+                <div><h4>{{ style.description }}</h4></div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <hr style="width: 85%; margin:auto">
+    <br>
+    <h2 style="text-align: center">Releases</h2>
+    <div class="container">
+        <div class="row" style="display: flex;align-items: center;justify-content: center;">
+            {% for vinyl in vinyl_same_style %}
+                <div class="col-md-3 ">
+
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="{{ vinyl.cover_art.url }}" alt="vinyl_cover" class="card-img-top">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-title">
+                                Artist(s): <a
+                                    href="{% url 'artist page' slug=vinyl.artist.slug %}">{{ vinyl.artist }}</a>
+                            </div>
+                            <div class="card-subtitle">
+                                Title: {{ vinyl.title|truncatechars:25 }}
+                            </div>
+                            <div class="card-text">
+                                Label: <a
+                                    href="{% url 'label page' slug=vinyl.record_label.slug %}">{{ vinyl.record_label.name }}</a>
+                            </div>
+                            <hr>
+                            <button class="btn btn-outline-secondary add-btn">Add to Cart</button>
+                            <a class="btn btn-outline-success" href="{% url 'vinyl page' pk=vinyl.pk %}">View</a>
+                            <h7 style="display: inline-block;float: right;margin-top: 5px">
+                                <b>${{ vinyl.price|floatformat:2 }}</b>
+                            </h7>
+                        </div>
+                    </div>
+                    <br>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

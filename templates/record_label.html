@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <br>
+
+    <div class="d-inline-flex p-2 bd-highlight">
+        <div class="row">
+            <div class="col-5">
+                <img src="{{ recordlabel.logo.url }}" alt="article" width="100%"
+                     style="box-shadow: 10px 10px 5px #ccc">
+            </div>
+            <div class="col-md-7">
+                <div><h1>{{ recordlabel.name }}</h1></div>
+                <hr>
+                {% if recordlabel.website %}
+                    <div><h4>Website: <a href="{{ recordlabel.website }}">{{ recordlabel.website }}</a></h4>
+
+                        <br>
+                    </div>
+                {% endif %}
+                <div><h4>{{ recordlabel.description }}</h4></div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

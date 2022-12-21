@@ -1,0 +1,1469 @@
+[
+{
+    "model": "auth.group",
+    "pk": 1,
+    "fields": {
+        "name": "God",
+        "permissions": [
+            [
+                "add_logentry",
+                "admin",
+                "logentry"
+            ],
+            [
+                "change_logentry",
+                "admin",
+                "logentry"
+            ],
+            [
+                "delete_logentry",
+                "admin",
+                "logentry"
+            ],
+            [
+                "view_logentry",
+                "admin",
+                "logentry"
+            ],
+            [
+                "add_group",
+                "auth",
+                "group"
+            ],
+            [
+                "change_group",
+                "auth",
+                "group"
+            ],
+            [
+                "delete_group",
+                "auth",
+                "group"
+            ],
+            [
+                "view_group",
+                "auth",
+                "group"
+            ],
+            [
+                "add_permission",
+                "auth",
+                "permission"
+            ],
+            [
+                "change_permission",
+                "auth",
+                "permission"
+            ],
+            [
+                "delete_permission",
+                "auth",
+                "permission"
+            ],
+            [
+                "view_permission",
+                "auth",
+                "permission"
+            ],
+            [
+                "add_contenttype",
+                "contenttypes",
+                "contenttype"
+            ],
+            [
+                "change_contenttype",
+                "contenttypes",
+                "contenttype"
+            ],
+            [
+                "delete_contenttype",
+                "contenttypes",
+                "contenttype"
+            ],
+            [
+                "view_contenttype",
+                "contenttypes",
+                "contenttype"
+            ],
+            [
+                "add_session",
+                "sessions",
+                "session"
+            ],
+            [
+                "change_session",
+                "sessions",
+                "session"
+            ],
+            [
+                "delete_session",
+                "sessions",
+                "session"
+            ],
+            [
+                "view_session",
+                "sessions",
+                "session"
+            ],
+            [
+                "add_source",
+                "thumbnails",
+                "source"
+            ],
+            [
+                "change_source",
+                "thumbnails",
+                "source"
+            ],
+            [
+                "delete_source",
+                "thumbnails",
+                "source"
+            ],
+            [
+                "view_source",
+                "thumbnails",
+                "source"
+            ],
+            [
+                "add_thumbnailmeta",
+                "thumbnails",
+                "thumbnailmeta"
+            ],
+            [
+                "change_thumbnailmeta",
+                "thumbnails",
+                "thumbnailmeta"
+            ],
+            [
+                "delete_thumbnailmeta",
+                "thumbnails",
+                "thumbnailmeta"
+            ],
+            [
+                "view_thumbnailmeta",
+                "thumbnails",
+                "thumbnailmeta"
+            ],
+            [
+                "add_appuser",
+                "web",
+                "appuser"
+            ],
+            [
+                "change_appuser",
+                "web",
+                "appuser"
+            ],
+            [
+                "delete_appuser",
+                "web",
+                "appuser"
+            ],
+            [
+                "view_appuser",
+                "web",
+                "appuser"
+            ],
+            [
+                "add_artist",
+                "web",
+                "artist"
+            ],
+            [
+                "change_artist",
+                "web",
+                "artist"
+            ],
+            [
+                "delete_artist",
+                "web",
+                "artist"
+            ],
+            [
+                "view_artist",
+                "web",
+                "artist"
+            ],
+            [
+                "add_djbooking",
+                "web",
+                "djbooking"
+            ],
+            [
+                "change_djbooking",
+                "web",
+                "djbooking"
+            ],
+            [
+                "delete_djbooking",
+                "web",
+                "djbooking"
+            ],
+            [
+                "view_djbooking",
+                "web",
+                "djbooking"
+            ],
+            [
+                "add_genre",
+                "web",
+                "genre"
+            ],
+            [
+                "change_genre",
+                "web",
+                "genre"
+            ],
+            [
+                "delete_genre",
+                "web",
+                "genre"
+            ],
+            [
+                "view_genre",
+                "web",
+                "genre"
+            ],
+            [
+                "add_profile",
+                "web",
+                "profile"
+            ],
+            [
+                "change_profile",
+                "web",
+                "profile"
+            ],
+            [
+                "delete_profile",
+                "web",
+                "profile"
+            ],
+            [
+                "view_profile",
+                "web",
+                "profile"
+            ],
+            [
+                "add_recordlabel",
+                "web",
+                "recordlabel"
+            ],
+            [
+                "change_recordlabel",
+                "web",
+                "recordlabel"
+            ],
+            [
+                "delete_recordlabel",
+                "web",
+                "recordlabel"
+            ],
+            [
+                "view_recordlabel",
+                "web",
+                "recordlabel"
+            ],
+            [
+                "add_style",
+                "web",
+                "style"
+            ],
+            [
+                "change_style",
+                "web",
+                "style"
+            ],
+            [
+                "delete_style",
+                "web",
+                "style"
+            ],
+            [
+                "view_style",
+                "web",
+                "style"
+            ],
+            [
+                "add_vinyl",
+                "web",
+                "vinyl"
+            ],
+            [
+                "change_vinyl",
+                "web",
+                "vinyl"
+            ],
+            [
+                "delete_vinyl",
+                "web",
+                "vinyl"
+            ],
+            [
+                "view_vinyl",
+                "web",
+                "vinyl"
+            ],
+            [
+                "add_vinylpurchase",
+                "web",
+                "vinylpurchase"
+            ],
+            [
+                "change_vinylpurchase",
+                "web",
+                "vinylpurchase"
+            ],
+            [
+                "delete_vinylpurchase",
+                "web",
+                "vinylpurchase"
+            ],
+            [
+                "view_vinylpurchase",
+                "web",
+                "vinylpurchase"
+            ]
+        ]
+    }
+},
+{
+    "model": "auth.group",
+    "pk": 2,
+    "fields": {
+        "name": "Moderator",
+        "permissions": [
+            [
+                "change_group",
+                "auth",
+                "group"
+            ],
+            [
+                "view_group",
+                "auth",
+                "group"
+            ],
+            [
+                "view_permission",
+                "auth",
+                "permission"
+            ],
+            [
+                "change_appuser",
+                "web",
+                "appuser"
+            ],
+            [
+                "view_appuser",
+                "web",
+                "appuser"
+            ],
+            [
+                "add_artist",
+                "web",
+                "artist"
+            ],
+            [
+                "change_artist",
+                "web",
+                "artist"
+            ],
+            [
+                "delete_artist",
+                "web",
+                "artist"
+            ],
+            [
+                "view_artist",
+                "web",
+                "artist"
+            ],
+            [
+                "add_djbooking",
+                "web",
+                "djbooking"
+            ],
+            [
+                "change_djbooking",
+                "web",
+                "djbooking"
+            ],
+            [
+                "delete_djbooking",
+                "web",
+                "djbooking"
+            ],
+            [
+                "view_djbooking",
+                "web",
+                "djbooking"
+            ],
+            [
+                "add_genre",
+                "web",
+                "genre"
+            ],
+            [
+                "change_genre",
+                "web",
+                "genre"
+            ],
+            [
+                "delete_genre",
+                "web",
+                "genre"
+            ],
+            [
+                "view_genre",
+                "web",
+                "genre"
+            ],
+            [
+                "add_profile",
+                "web",
+                "profile"
+            ],
+            [
+                "change_profile",
+                "web",
+                "profile"
+            ],
+            [
+                "delete_profile",
+                "web",
+                "profile"
+            ],
+            [
+                "view_profile",
+                "web",
+                "profile"
+            ],
+            [
+                "add_recordlabel",
+                "web",
+                "recordlabel"
+            ],
+            [
+                "change_recordlabel",
+                "web",
+                "recordlabel"
+            ],
+            [
+                "delete_recordlabel",
+                "web",
+                "recordlabel"
+            ],
+            [
+                "view_recordlabel",
+                "web",
+                "recordlabel"
+            ],
+            [
+                "add_style",
+                "web",
+                "style"
+            ],
+            [
+                "change_style",
+                "web",
+                "style"
+            ],
+            [
+                "delete_style",
+                "web",
+                "style"
+            ],
+            [
+                "view_style",
+                "web",
+                "style"
+            ],
+            [
+                "add_vinyl",
+                "web",
+                "vinyl"
+            ],
+            [
+                "change_vinyl",
+                "web",
+                "vinyl"
+            ],
+            [
+                "delete_vinyl",
+                "web",
+                "vinyl"
+            ],
+            [
+                "view_vinyl",
+                "web",
+                "vinyl"
+            ],
+            [
+                "add_vinylpurchase",
+                "web",
+                "vinylpurchase"
+            ],
+            [
+                "change_vinylpurchase",
+                "web",
+                "vinylpurchase"
+            ],
+            [
+                "view_vinylpurchase",
+                "web",
+                "vinylpurchase"
+            ]
+        ]
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "2ol3vewo9fufisbfgefs80tjq2pxbih8",
+    "fields": {
+        "session_data": ".eJxVjMsOwiAQRf-FtSE8BVy67zeQGQakaiAp7cr479qkC93ec859sQjbWuM28hJnYhcmBTv9jgjpkdtO6A7t1nnqbV1m5LvCDzr41Ck_r4f7d1Bh1G-tCxorUJGwPnubijQqFQcuEMmQihdAOWGxyiCI4NxZG2-0kyUrsojs_QEZSDiU:1p7w1C:4e-sem3_f-Kn2BvD2hesI_1tPjF7ObhxhRC-ItoT5VU",
+        "expire_date": "2023-01-04T10:08:10.113Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "ndk1r7q9t4c8o1hqfvxzjztbrrukcscl",
+    "fields": {
+        "session_data": ".eJxVjMsOwiAQRf-FtSE8BVy67zeQGQakaiAp7cr479qkC93ec859sQjbWuM28hJnYhcmBTv9jgjpkdtO6A7t1nnqbV1m5LvCDzr41Ck_r4f7d1Bh1G-tCxorUJGwPnubijQqFQcuEMmQihdAOWGxyiCI4NxZG2-0kyUrsojs_QEZSDiU:1p7wNp:wshPqCYobyEN1vyHbYf7XAoJBn__pqtHWFCkP-XTdRQ",
+        "expire_date": "2023-01-04T10:31:33.946Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "thbeedtg6dcf4eq32ylc9e5k9q1w5vyx",
+    "fields": {
+        "session_data": ".eJxVjEsOwiAUAO_C2hB-RXDpvmcg74NSNZCUdmW8uyHpQrczk3mLBPtW0t7zmhYWF6HF6Zch0DPXIfgB9d4ktbqtC8qRyMN2OTfOr-vR_g0K9DK2ij0CWiAPxlrEiZ1WljWR0cEAwZSdiSYEVHi2RkUNKkQbvcPsb058vuWuN3k:1p6tqw:YoaYjnjNqs2-3E5Q2i389zLvQY0lMYE7aALFglOz-fU",
+        "expire_date": "2023-01-01T13:37:18.860Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "yu4maik79xesvsvvxwnliua1d4g9lz22",
+    "fields": {
+        "session_data": ".eJxVjEsOwiAUAO_C2hB-RXDpvmcg74NSNZCUdmW8uyHpQrczk3mLBPtW0t7zmhYWF6HF6Zch0DPXIfgB9d4ktbqtC8qRyMN2OTfOr-vR_g0K9DK2ij0CWiAPxlrEiZ1WljWR0cEAwZSdiSYEVHi2RkUNKkQbvcPsb058vuWuN3k:1p7FI6:a6j36EEH44zzxXiNI6wOlkuJ00KKzUomgWIWR8rkf6U",
+        "expire_date": "2023-01-02T12:30:46.064Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "yw1d1winrv572nkeco789ka6skgqe45g",
+    "fields": {
+        "session_data": ".eJxVjDkOwjAUBe_iGll2Fn-bkp4zWH8zDqBEylIh7g6RUkD7Zua9TMZtrXlbdM6DmLPx3px-R0J-6LgTueN4myxP4zoPZHfFHnSx10n0eTncv4OKS_3WgSMmlxpmoKCgJG2hEgMEBKDIyXUEffDSK0YkJ-wLtJCSNKKx6837AyRGOLU:1p7weS:PLdryhUm2vMqo_klXjs3DA8K9et9Ss1s2Db9XuyZkwA",
+        "expire_date": "2023-01-04T10:48:44.928Z"
+    }
+},
+{
+    "model": "web.appuser",
+    "pk": 11,
+    "fields": {
+        "password": "pbkdf2_sha256$390000$65onSFfjEVwlo1TezpELi7$088sYkpZ7y+U0SnJeQqCk42NCW/3lxr7nfCTYdZR2zo=",
+        "last_login": "2022-12-21T10:48:44.919Z",
+        "is_superuser": true,
+        "email": "qwe@qwe.com",
+        "date_joined": "2022-12-21T10:40:27.320Z",
+        "is_staff": true,
+        "groups": [
+            [
+                "God"
+            ]
+        ],
+        "user_permissions": []
+    }
+},
+{
+    "model": "web.genre",
+    "pk": 1,
+    "fields": {
+        "name": "Electronic Music",
+        "slug": "electronic-music",
+        "description": "Electronic music is music that employs electronic musical instruments and electronic music technology in its production, an electronic musician is a musician who composes and/or performs such music. In general, a distinction can be made between sound produced using electromechanical means and that produced using electronic technology. Examples of electromechanical sound-producing devices include the telharmonium, Hammond organ, and the electric guitar. Purely electronic sound production can be achieved using devices such as the theremin, sound synthesizer, and computer.",
+        "image": "genres/electornic-music.png"
+    }
+},
+{
+    "model": "web.genre",
+    "pk": 2,
+    "fields": {
+        "name": "Jazz",
+        "slug": "jazz",
+        "description": "Jazz is a genre of music that originated in African-American communities during the late 19th and early 20th century. Jazz emerged in many parts of the United States as independent popular musical styles; linked by the common bonds of European American and African-American musical parentage with a performance orientation. Jazz spans a range of music from ragtime to the present dayвЂ”a period of over 100 yearsвЂ”and has proved to be very difficult to define. Jazz makes heavy use of improvisation, polyrhythms, syncopation, and the swung note, as well as aspects of European harmony, American popular music, the brass band tradition, and African musical elements such as blue notes and ragtime. A musical group that plays jazz is called a jazz band.\r\n\r\nWhile New Orleans jazz has improvised ensembles, when jazz started becoming popular in the 1920s and demand was growing for larger dance bands, it became necessary for ensembles to be written down, particularly when a group included more than three...",
+        "image": "genres/jazz.png"
+    }
+},
+{
+    "model": "web.genre",
+    "pk": 3,
+    "fields": {
+        "name": "Classical",
+        "slug": "classical",
+        "description": "Classical music is art music produced or rooted in the traditions of Western music (both liturgical and secular). It encompasses a broad span of time from roughly the 11th century to the present day. The central norms of this tradition became codified between 1550 and 1900, which is known as the common practice period. The major time divisions of classical music are as follows: the early music period, which includes the Medieval (500вЂ“1400) and the Renaissance (1400вЂ“1600); the Common practice period, which includes the Baroque (1600вЂ“1750), Classical (1750вЂ“1830) and Romantic (1804вЂ“1910); the 20th century (1901вЂ“2000) which includes the modern period (1890-1930) that overlaps from the late 19th-century, the high modern (mid-20th-century), and contemporary (1975вЂ“2000) period, the last of which overlaps into the 21st-century.",
+        "image": "genres/classical.png"
+    }
+},
+{
+    "model": "web.style",
+    "pk": 1,
+    "fields": {
+        "genre": 1,
+        "name": "Techno",
+        "slug": "techno",
+        "description": "Techno is a style of electronic dance music (EDM) that is predominantly characterized by a repetitive four-on-the-floor beat which is generally produced for use in a continuous DJ set. The central rhythm is often in common time, while the tempo typically varies between 120 and 150 beats per minute (bpm). Artists may use electronic instruments such as drum machines, sequencers, and synthesizers, as well as digital audio workstations.\r\n\r\nThe first proto-Techno/Electro release was Cybotron's 'Alleys Of Your Mind' in 1981. That same year, a group by the name of 'A Number Of Names' released another important and influential song called 'Sharivari'. While both of those songs aren't pure Techno, they are the roots of the sound and a very important part of history.\r\n\r\nThe term Techno (specifically relating to the music genre) was first used on the 1984 EP by Cybotron called 'Techno City'. It was also used on the 1988 compilation 'Techno! The New Dance Sound Of Detroit'. Juan Atkins, one-half of Cybotron, was the first person to use the term to specifically describe the regional dance sound of Detroit. Atkins and the other purveyors of the sound - Derrick May, Kevin Saunderson, and Eddie Fowlkes - comprise what is known as 'The First Wave' (pre-1988).\r\n\r\nOther notable early artists are Blake Baxter, James Pennington, and Anthony Shakir. The second wave of Techno artists, from 1988 onward, notably consisted of Jeff Mills, Mike Banks (of Underground Resistance), Carl Craig, Richie Hawtin, Rob Hood, Dave Angel, Kenny Larkin, Dan Bell, Drexciya, Stacey Pullen, Orlando Voorn, Kelli Hand, and Octave One (to name just a few).\r\n\r\nBeing a large and globally popular style of music, there are now many subgenres of techno, which often have their own Discogs tags. Use of these as opposed to simply 'techno' will bring further specificity to entries and prevent the overpopulation of techno itself as a tag.",
+        "image": "styles/techno.png"
+    }
+},
+{
+    "model": "web.style",
+    "pk": 2,
+    "fields": {
+        "genre": 1,
+        "name": "Breakbeat",
+        "slug": "breakbeat",
+        "description": "Breakbeat is a primarily UK-based style that existed alongside and quickly became infused into hardcore rave/techno music, in turn leading to faster, more complex jungle and hardcore music. Breakbeat is characterized by a prominent, syncopated 4/4 rhythm constructed from breakbeatsвЂ”i.e., sampled drum breakdowns from rock, jazz, funk, and hip-hop music. Unlike jungle, breakbeat has very little variation or rearrangement of the drum patterns, and it is usually slower/mid-tempo, roughly 100 to 125 BPM, speeding up as the style evolved into jungle. The \"Golden Age\" of breakbeat was in the early 1990s.\r\n\r\nSome Discogs users apply the Breakbeat tag to any release that utilizes breakbeat samples, but such usage is contentious, especially for releases outside the 1988вЂ“1993 timeframe; the tag was originally intended to refer specifically to the pre-jungle/pre-hardcore music that was actually called breakbeat, or as a way to differentiate breakbeat-based techno from non-breakbeat-based.\r\n\r\nThere is no tag specifically for \"beats and breaks\" types of releases intended for DJs and music producers, nor is there a tag for other forms of dance music that contain funky drum breaks (aside from Breaks), regardless of whether it is made with samples, tape loops, drum machines, or played live. Some Discogs users nevertheless use Breaks and Breakbeat tags on these types of records, going back as far as 1982 for the first Jive Rhythm Trax release.",
+        "image": "styles/breakbeat.png"
+    }
+},
+{
+    "model": "web.style",
+    "pk": 3,
+    "fields": {
+        "genre": 1,
+        "name": "Downtempo",
+        "slug": "downtempo",
+        "description": "Downtempo (or downbeat) music is associated with a variety of different Discogs genres, including electronic, jazz, rock, and some world music. It is generally 50 to 90 BPM, and sometimes there is not even any overt percussion in the music.\r\n\r\nThe Downtempo tag was originally intended to refer to 1990sвЂ“2000s chillout music that has a slow, rolling, hip-hop or dub-inspired groove, with sampled beats, and which can be broadly categorized as primarily jazzy, primarily dubby, or both. However, as downtempo is loosely defined, it has become an umbrella term for a broad selection of music with moody tones, chilling to passionate vocals, crossover indie vibes, and mellow beats.\r\n\r\nUsage of the Downtempo tag for music from before c. 1989 or as a generic tempo descriptor is likely to be contentious. Users should also be aware of the wide variety of potentially better tags for more specific slow electronic styles.",
+        "image": "styles/downtempo.png"
+    }
+},
+{
+    "model": "web.style",
+    "pk": 4,
+    "fields": {
+        "genre": 3,
+        "name": "Baroque",
+        "slug": "baroque",
+        "description": "Baroque Music is a style of European Classical Music between 1600 to 1750. The baroque era followed the Renaissance period (approx. ... In instrumental music the period saw the emergence of the sonata, the suite, and particularly the concerto grosso, as in the music of Corelli, Vivaldi, Handel, and Bach.",
+        "image": "styles/baroque.png"
+    }
+},
+{
+    "model": "web.style",
+    "pk": 5,
+    "fields": {
+        "genre": 3,
+        "name": "Modern",
+        "slug": "modern",
+        "description": "Modern classical music. Refers to the period of modernism and covers Western classical music from period around 1890-1950 (or up to 1975 by different sources). This is a major group that includes sub-periods of Western Classical Music, such as:\r\n\r\nImpressionist Music (c. 1890-1930)\r\nExpressionist Music (c. 1900-1930)\r\nNeo-Classical Music (c. 1920-1950)\r\nSerialist Music (c. 1920-1975)\r\nThere is a Modern Classical tag on Discogs, which, despite its name, does not cover the time periods, but groups work where classical music traditional instruments are fused with electronic production or instruments.",
+        "image": "styles/modern.png"
+    }
+},
+{
+    "model": "web.style",
+    "pk": 6,
+    "fields": {
+        "genre": 2,
+        "name": "Jazz-Funk",
+        "slug": "jazz-funk",
+        "description": "Jazz-funk is a subgenre of jazz music characterized by a strong backbeat (groove), electrified sounds, and an early prevalence of analog synthesizers. The integration of funk, soul and R&B music and styles into jazz resulted in the creation of a genre whose spectrum is quite wide and ranges from strong jazz improvisation to soul, funk, or disco with jazz arrangements, jazz riffs, and jazz solos, and sometimes soul vocals.",
+        "image": "styles/jazz-funk.png"
+    }
+},
+{
+    "model": "web.style",
+    "pk": 7,
+    "fields": {
+        "genre": 2,
+        "name": "Future Jazz",
+        "slug": "future-jazz",
+        "description": "Arising in the second half of the 1990s and also called nu jazz, Future Jazz is higher tempo, less funky, and less live performance-oriented than acid jazz. It has stronger influences of Brazilian and Latin jazz styles, although it rarely uses horns. It often comes from producers influenced by drum & bass.",
+        "image": "styles/future-jazz.png"
+    }
+},
+{
+    "model": "web.recordlabel",
+    "pk": 1,
+    "fields": {
+        "name": "Planet Rhythm Records",
+        "slug": "planet-rhythm-records",
+        "description": "Dutch techno label, currently owned by Triple Vision Music Group. The label was originally founded by Glenn Wilson back in the early '90s in Sweden with the help of Adam Beyer, Umek, Gaetek, Thomas Krome, Slobodan & Patrick Skoog and many more local techno producers at the time. The label then changed ownership around 2005.",
+        "website": "https://planetrhythm.bandcamp.com/",
+        "logo": "record_labels/fBdqcJm7VwXhwxmuzxY7pa.jpg"
+    }
+},
+{
+    "model": "web.recordlabel",
+    "pk": 2,
+    "fields": {
+        "name": "Tresor",
+        "slug": "tresor",
+        "description": "Berlin-based techno label started in July 1991 by Dimitri Hegemann, taking its name from the techno club set up in an underground vault following the fall of the Berlin Wall.\r\n\r\n1. Label Code: LC 7572 / LC 07572 (1991вЂ“2002)\r\n2. Label Code: LC 3702 / LC 03702 (2002вЂ“xxxx)",
+        "website": "https://tresorberlin.com/",
+        "logo": "record_labels/D5gQBurGq8vNqExicsahFi.jpg"
+    }
+},
+{
+    "model": "web.recordlabel",
+    "pk": 3,
+    "fields": {
+        "name": "CBS",
+        "slug": "cbs",
+        "description": "Columbia Broadcasting System, Inc., former owner of the various CBS companies, was established in 1928, and in 1961, its recorded music division CBS Records was founded. It was initially set up to distribute and market releases on the CBS label overseas, from their US catalog owned by their subsidiary Columbia Records, Inc..",
+        "website": "https://www.cbsrecords.com/",
+        "logo": "record_labels/UinUdxnzJpmUbukRoFpJNp.jpg"
+    }
+},
+{
+    "model": "web.recordlabel",
+    "pk": 4,
+    "fields": {
+        "name": "Warner Bros. Records",
+        "slug": "warner-bros-records",
+        "description": "Founded in 1958 by Jack Warner as a soundtrack factory for Warner Bros. movie studios, Warner Bros. Records and its family of subsidiary labels, which includes Reprise Records, Sire Records, Maverick Records, Warner Nashville, Warner Jazz, Warner Western, and Word Label Group encompassed a full spectrum of musical genres.\r\nAfter more than 60 years using the Warner Bros. name and logo (and following the end of a 15-year licensing agreement with AT&T/WarnerMedia, until 2018 Time Warner), the label was rebranded in May 2019 to simply Warner Records.\r\n\r\nWarner Bros. is known to have used various companies pressing facilities, including but not limited to, Columbia Records Pressing Plant, Santa Maria & Columbia Records Pressing Plant, Terre Haute",
+        "website": "https://www.warnerrecords.com/",
+        "logo": "record_labels/nNHfUJ2UQeZ6q69KKd2jsX.jpg"
+    }
+},
+{
+    "model": "web.recordlabel",
+    "pk": 5,
+    "fields": {
+        "name": "Fontana",
+        "slug": "fontana",
+        "description": "The Fontana label was launched by Philips Phonografische Industrie (PPI) in 1956 in France as a variety label; the logo change occurred in 1957. It was later launched in the UK in 1958; initially it was used to market recordings licensed from Epic outside of the US, later it expanded to other US labels.\r\nIn September 1964, PPI's US affiliate, Mercury Record Corporation, introduced the label in the US for international recordings, although it eventually became a mainstream pop label.\r\nIn 2013, Fontana's independent circuit was sold off to INgrooves, leaving Fontana Records separate.\r\n\r\nLabel Code: LC 0211\r\n\r\nThe 7 digits numerical catalogue numbers were introduced in April 1970. Any item with such a number is after that date.\r\n\r\nPrinting dates on French EPs of the late 50s/60s appear as \"MY\" or \"MMY\" (e.g. \"81\" = August 1961 ; \"118\" = November 1958).",
+        "website": "http://www.globaldogproductions.info/f/fontana-uk-1.html",
+        "logo": "record_labels/gMQgYoUfPrVnfCZhMoi2AL.jpg"
+    }
+},
+{
+    "model": "web.recordlabel",
+    "pk": 6,
+    "fields": {
+        "name": "Sony Classical",
+        "slug": "sony-classical",
+        "description": "Label Code: LC 6868 / LC 06868.\r\nSony's classical, crossover, and soundtrack music label. Sony Classical was introduced in April 1990 and was formerly known as CBS Masterworks Records.\r\nIn the US it is operated by Sony Music Masterworks and in the rest of the world by Sony Classical in Berlin, Germany, except in Japan, where the label was not used until around the year 2020.",
+        "website": "https://www.sonyclassical.com/",
+        "logo": "record_labels/6PUQm9odyPFo62Mg4J9z6p.jpg"
+    }
+},
+{
+    "model": "web.recordlabel",
+    "pk": 7,
+    "fields": {
+        "name": "Form & Function",
+        "slug": "form-function",
+        "description": "German label formed in the late nineties under Rough Trade Records GmbH. In July 1999, Rough Trade Germany GmbH became Zomba Records GmbH and Form & Function moved along with the new branding.\r\n\r\nIn 2002, BMG purchased the entire Zomba Group and Zomba Records GmbH was integrated into the German BMG office. Form & Function largely disappeared after that.\r\n\r\nLC 7551 / LC 07551",
+        "website": "http://www.zomba.de/",
+        "logo": "record_labels/5ynkCvuYaZ7b645SjahqhC.jpg"
+    }
+},
+{
+    "model": "web.recordlabel",
+    "pk": 8,
+    "fields": {
+        "name": "Go! Beat",
+        "slug": "go-beat",
+        "description": "UK label, founded in 1992 by former Stiff Records representatives Andy MacDonald and Lesley Symons.\r\nIn 1996 PolyGram acquired a majority stake in the label leading to the resignation of MacDonald. The label folded not too long afterwards but was revived.",
+        "website": null,
+        "logo": "record_labels/ZP9np8tWkVRh2qGyrRgonf.jpg"
+    }
+},
+{
+    "model": "web.recordlabel",
+    "pk": 9,
+    "fields": {
+        "name": "Blue Note",
+        "slug": "blue-note",
+        "description": "Blue Note is a label that is mostly known for its releases in the jazz genre.\r\n\r\nLabel Code: LC 0133 / LC 00133\r\n\r\nFlagship label of Blue Note Records, a record company from New York. Founded by Alfred Lion and Max Margulis in 1939, the label focused on jazz and built an important catalogue of traditional jazz and swing recordings through the 1940s. Its earliest releases are now acknowledged as classics. In the 1950s it was one of the earliest labels on which bop musicians appeared.\r\n\r\nAfter the purchase by Liberty in 1965, more commercially-oriented music, including jazz-fusion, started appearing on the label. In 1975, then-owners United Artists Records launched a systematic reissue program of Blue Note's back catalog lasting until 1980. Around that same time, Blue Note became a label of EMI.",
+        "website": "http://www.bluenote.com/",
+        "logo": "record_labels/SVh3xACncitsdmUtyPYTCr.jpg"
+    }
+},
+{
+    "model": "web.recordlabel",
+    "pk": 10,
+    "fields": {
+        "name": "City Of Angels",
+        "slug": "city-of-angels",
+        "description": "8391 Beverly Blvd #184\r\nLos Angeles, CA 90048",
+        "website": null,
+        "logo": "record_labels/cNcmJNP5jcCCmrQ2RsM523.jpg"
+    }
+},
+{
+    "model": "web.recordlabel",
+    "pk": 11,
+    "fields": {
+        "name": "PentaTone",
+        "slug": "pentatone",
+        "description": "Dutch label mainly for classical music.\r\nLabel Code: LC 12686\r\nKnown as PentaTone classics until 2014, it was founded in 2001 by three former executives of Philips Classics (one of the classical music labels of Universal) together with Polyhymnia International (the former recording center of Philips Classics).",
+        "website": "http://www.pentatonemusic.com/",
+        "logo": "record_labels/bubYq4TRvFchESe5qArvkh.jpg"
+    }
+},
+{
+    "model": "web.artist",
+    "pk": 1,
+    "fields": {
+        "name": "Canteloube",
+        "slug": "canteloube",
+        "age": 78,
+        "location": "France",
+        "bio": "French composer, musicologist and author, born 21 October 1879 in Annonay, France, died 4 November 1957 in Grigny, France.",
+        "image": "artists/A-805611-1265291490.jpg",
+        "style": 5,
+        "booking_fee_per_hour": null
+    }
+},
+{
+    "model": "web.artist",
+    "pk": 2,
+    "fields": {
+        "name": "Leonard Bernstein",
+        "slug": "leonard-bernstein",
+        "age": 72,
+        "location": "United States",
+        "bio": "Born: August 25, 1918 (Lawrence, Massachusetts, United States).\r\nDied: October 14, 1990 (The Dakota, New York City, NY, United States).\r\n\r\nAmerican composer, conductor, pianist, author, and music lecturer.\r\nMost famous for his time as music director with The New York Philharmonic Orchestra and his works such as \"West Side Story\" and \"On The Town\".\r\nInducted into the Songwriters Hall of Fame in 1971.\r\nHe married actress Felicia Montealegre on September 10, 1951, with whom they had three children, Jamie Bernstein, Alexander Bernstein, and Nina Bernstein.",
+        "image": "artists/A-299702-1472544254-5737.jpg",
+        "style": 5,
+        "booking_fee_per_hour": null
+    }
+},
+{
+    "model": "web.artist",
+    "pk": 3,
+    "fields": {
+        "name": "St Germain",
+        "slug": "st-germain",
+        "age": 50,
+        "location": "France",
+        "bio": "'St Germain' is the stage name of Ludovic Navarre and is based on the story of the Count of St. Germain, a mysterious and eccentric man from the 18th century who claimed to be several hundred years old.\r\nSt Germain is among the leading French masters to have established the 'French Touch': the 'French Traxx EP' and 'Motherland EP', both released in 1993, introduced his style: a mix of deep house, jazz, and lounge; sampling and real instruments playing side to side.\r\nThe album 'Boulevard' (1995) and the track 'Alabama Blues' (reworked by Todd Edwards at the same period) made St Germain a success worldwide. Five years later, the album 'Tourist' (2000) had a tremendous impact with the famous singles 'Rose Rouge', 'Sure Thing' and 'So Flute'.",
+        "image": "artists/A-74-1477143096-5583.jpg",
+        "style": 7,
+        "booking_fee_per_hour": 5000
+    }
+},
+{
+    "model": "web.artist",
+    "pk": 4,
+    "fields": {
+        "name": "Patrick Pulsinger",
+        "slug": "patrick-pulsinger",
+        "age": 52,
+        "location": "Germany",
+        "bio": "Patrick Pulsinger (1970, Weissenfels, German Democratic Republic) is an Austrian Vienna-based producer and composer.\r\n\r\nPulsinger founded Cheap Records together with Erdem Tunakan in 1993. Pulsinger produces music for more than 20 years and is well-known in many contexts, due to a broad range of international releases and live appearances.\r\n\r\nAs a producer and engineer, Pulsinger performed with Patrick Wolf, DJ Hell, Trio Exclusive, BulBul, Mark Stewart, Philip Quehenberger, Quruli, Freud, Ritornell, Elektro Guzzi, Hercules, and Love Affair, and many more.",
+        "image": "artists/A-3242-1231532665.jpg",
+        "style": 7,
+        "booking_fee_per_hour": 5500
+    }
+},
+{
+    "model": "web.artist",
+    "pk": 5,
+    "fields": {
+        "name": "Adam Beyer",
+        "slug": "adam-beyer",
+        "age": 46,
+        "location": "Sweden",
+        "bio": "Swedish techno producer and DJ, born May 15, 1976 in Stockholm.\r\n\r\nHe is the founder of Drumcode in 1996, sidelabel Truesoul in 2002 and co-founder of Planet Rhythm Records. Married to Ida Engberg.\r\nStarted DJing and producing around the middle 90's, he was interested in things like acid, gabber, speedcore, hard house and he made numerous records in those styles together with his good friend Peter Benisch under various aliases. After he met the local and fresh-born Swedish culture, he co-founded Planet Rhythm, worked in their record shop and moved towards analog techno, releasing at labels like Loop Records (4), Rotation Records, Svek and Primate Recordings as well. He released his first album at Planet Rhythm in 1996 Decoded and the (remix version Recoded in 1997).\r\nIn 1996, after he began to experiment with more distorted and raw sounds, he decided to sell his part of Planet Rhythm and founded Drumcode. At first, it was a primarily Swedish-only label with local colleagues like Jesper DahlbГ¤ck, Cari Lekebusch, Thomas Krome, Fredrick Almquist, Joel Mull and so on. Occasionally he invited international friends like Oliver Ho, Marco Carola and various more to the remix compilation Stand Down. Regarding to the previous, the small collective followed Adam on the more experimental road of sounds, earning themselves the often-mentioned reference as pioneers of the \"Swedish Techno\". Adam's third album Protechtion in 1999 was said to be an example to this sound. These experiments continued on sublabels such as Code Red, Truesoul in 2002 (where he released his fourth album Ignition Key) and Mad Eye in 2004. He invited more artists from Sweden with the likes of Hardcell, PГ¤r Grindvik, Patrik Skoog, Hertz and Henrik B; strengthening the \"Swedish Techno\" sound with compilations like Swedish Steel E.P. and Swedish Silver - 10 Years Of Drumcode.\r\nAround 2004, beside his open-minded friends like style-founder Richie Hawtin (or Plastikman), Henrik B and Jesper DahlbГ¤ck; he became a defining responsible of refreshing the techno sound with a more minimal approach. One of his first tries was the 17th project which have been followed with collaborations with the latter in this growing new direction.\r\nAround the end of 2006, began with the release I Want You by PГ¤r Grindvik, Adam extended the label worldwide and open to the new minimal movement. Beginning with artists like Perc, Ortin Cam and the uprising of digital distribution, he made the label more active with the number of releases.\r\nIn 2013, he let the label and his own productions not necessarily related to techno, with becoming open for tech, deep and progressive house. This turn was marked with the Swedish Silver Vol.2 compilation and began to push out releases in a monthly frequency. Beside the criticism received, he and Drumcode could remain successful definers in electronic dance music.",
+        "image": "artists/A-1360-1446921012-1257.jpg",
+        "style": 1,
+        "booking_fee_per_hour": 3500
+    }
+},
+{
+    "model": "web.artist",
+    "pk": 6,
+    "fields": {
+        "name": "Jeff Mills",
+        "slug": "jeff-mills",
+        "age": 59,
+        "location": "United States",
+        "bio": "American techno DJ, composer, producer, and recording artist, based in Detroit, Michigan, USA.\r\n\r\nBorn: 18 June 1963 in Detroit, Michigan, USA.\r\n\r\nJeff Mills (aka \"The Wizard\") is one of the most pioneering American names in techno music. Championed for his music's relentless pursuit of hardness and his stripped-down, almost industrial DJ sets, Mills is the latest in a long line of Detroit-bred talent to take on an international reputation, performing for audiences around the world in both club and art spaces.\r\n\r\nHe also runs his own label, Axis, and its several sub-labels. Married to Yoko Uozumi.",
+        "image": "artists/A-205-1505809749-7910.jpg",
+        "style": 1,
+        "booking_fee_per_hour": 4000
+    }
+},
+{
+    "model": "web.artist",
+    "pk": 7,
+    "fields": {
+        "name": "George Benson",
+        "slug": "george-benson",
+        "age": 80,
+        "location": "United States",
+        "bio": "Benson was born and raised in the Hill District in Pittsburgh, Pennsylvania. At the age of seven, he first played the ukulele in a corner drug store, for which he was paid a few dollars. At the age of eight, he played guitar in an unlicensed nightclub on Friday and Saturday nights, but the police soon closed the club down.  At the age of 10, he recorded his first single record, вЂњShe Makes Me MadвЂќ, with RCA-Victor in New York, under the name вЂњLittle GeorgieвЂќ.\r\n\r\nAt the age of 21, he recorded his first album as leader, The New Boss Guitar, featuring McDuff. BensonвЂ™s next recording was ItвЂ™s Uptown with the George Benson Quartet, including Lonnie Smith on organ and Ronnie Cuber on baritone saxophone. Benson followed it up with The George Benson Cookbook, also with Lonnie Smith and Ronnie Cuber on baritone and drummer Marion Booker. Miles Davis employed Benson in the mid-1960s, featuring his guitar on вЂњParaphernaliaвЂќ on his 1968 Columbia release, Miles in the Sky before going to Verve Records.\r\n\r\nBenson then signed with Creed TaylorвЂ™s jazz label CTI Records, where he recorded several albums, with jazz heavyweights guesting, to some success, mainly in the jazz field. His 1974 release, Bad Benson, climbed to the top spot in the Billboard jazz chart.",
+        "image": "artists/A-2266-1488862087-4344.jpg",
+        "style": 6,
+        "booking_fee_per_hour": 7000
+    }
+},
+{
+    "model": "web.artist",
+    "pk": 8,
+    "fields": {
+        "name": "Ronnie Laws",
+        "slug": "ronnie-laws",
+        "age": 72,
+        "location": "United States",
+        "bio": "Born: October 3rd, 1950, Houston, Texas (USA)\r\nSaxophonist, younger brother of Hubert Laws. His sisters Eloise Laws & Debra Laws also have successful careers as vocalists in the music industry.",
+        "image": "artists/A-97916-1188771795.jpg",
+        "style": 6,
+        "booking_fee_per_hour": null
+    }
+},
+{
+    "model": "web.artist",
+    "pk": 9,
+    "fields": {
+        "name": "Lamb",
+        "slug": "lamb",
+        "age": 46,
+        "location": "United Kingdom",
+        "bio": "Lamb is an electronic music duo formed in Manchester in 1996 by Andy Barlow (music) and Louise Rhodes (vocals). Their musical style is a distinctive mix of trip-hop, jazz, dub, breaks and drum and bass. The duo split from 2004 to 2009.",
+        "image": "artists/A-655-1556751397-6560.jpg",
+        "style": 3,
+        "booking_fee_per_hour": 2500
+    }
+},
+{
+    "model": "web.artist",
+    "pk": 10,
+    "fields": {
+        "name": "Portishead",
+        "slug": "portishead",
+        "age": 50,
+        "location": "United Kingdom",
+        "bio": "Portishead are an English band formed in 1991 in Bristol. They are often considered one of the pioneers of trip hop music. The band are named after the nearby town of the same name, eight miles west of Bristol, along the coast. Portishead consists of Geoff Barrow, Beth Gibbons and Adrian Utley, while sometimes citing a fourth member, Dave McDonald, an engineer on their first records. Live shows also featured DJ Andy Smith. Their debut album, Dummy, was met with critical acclaim in 1994. Two other studio albums were issued: Portishead in 1997 and Third in 2008.",
+        "image": "artists/A-2774-1209487724.jpg",
+        "style": 3,
+        "booking_fee_per_hour": 6000
+    }
+},
+{
+    "model": "web.artist",
+    "pk": 11,
+    "fields": {
+        "name": "Crystal Method",
+        "slug": "crystal-method",
+        "age": 49,
+        "location": "United States",
+        "bio": "The Crystal Method is an electronic music project from the USA. Formed in 1993 in Las Vegas, Nevada as a duo of Scott Kirkland and Ken Jordan.\r\n\r\nIn early 2017, Ken Jordan decided to retire from music, and left the project, and The Crystal Method became a solo project of Scott Kirkland.",
+        "image": "artists/A-3141-1180650479.jpg",
+        "style": 2,
+        "booking_fee_per_hour": 3000
+    }
+},
+{
+    "model": "web.artist",
+    "pk": 12,
+    "fields": {
+        "name": "Pierre Froidebise",
+        "slug": "pierre-froidebise",
+        "age": 48,
+        "location": "Belgium",
+        "bio": "Pierre Froidebise (Chey 1914- Luik 1962) was a Belgian organist and composer.\r\nFather of Anne Froidebise.",
+        "image": "artists/A-3089533-1375874036-2067.jpg",
+        "style": 4,
+        "booking_fee_per_hour": null
+    }
+},
+{
+    "model": "web.artist",
+    "pk": 13,
+    "fields": {
+        "name": "Alon Sariel",
+        "slug": "alon-sariel",
+        "age": 37,
+        "location": "Israel",
+        "bio": "Philharmonic hall, not jazz podium; Mozart festival not cult TV rock programme вЂ“ back then, Alon had not foreseen how things would develop: back then, in 1994, when his music teacher told the eight-year-old that the mandolin and the electric guitar were вЂњbasically the same thingвЂќ. This was a momentous deception that was to deliver to the world of music one of the most versatile mandolin players, lutenists and ensemble directors of the present day. In his concert programmes, Alon uses the lute, Baroque guitar, oud and other plucked instruments to give his audiences the most diverse musical experiences. The mandolin, which has survived the centuries and found its place in the most varied of music styles and cultures, occupies a very special place in his heart.\r\n\r\nHis many acclaimed recordings of Renaissance and Baroque works вЂ“ his album вЂњTelemandolinвЂќ was recognised in 2018 with an OPUS Klassik award вЂ“ have firmly established him in the public eye as a specialist for early music. His work with international soloists and ensembles such as Maurice Steger, Andreas Scholl, Lautten Compagney, NorwayвЂ™s Barokksolistene and many others attests to his reputation. That said, AlonвЂ™s guiding principle is a changing perspective. In other words: giving new life to existing material, as well as creating completely new works. \r\n\r\nThat is why Alon, as soloist and conductor, frequently brings contemporary compositions both to the stage and into the studio. He conducted the Munich Chamber Orchester in Markus StockhausenвЂ™s вЂњSymbiosisвЂќ, premiered as soloist with the Deutsches Kammerorchester Berlin Gilad HochmanвЂ™s вЂњNedudimвЂќ, and commissioned two new works for mandolin from Uri Caine for the Beethoven anniversary year in 2020. His current album and PENTATONE debut вЂњPlucked BachвЂќ is a journey through Bach's Cello Suites on six of his different plucked instruments. For 2023, when the mandolin is named Instrument of the Year, Alon is planning new collaborations and the commission of new works.\r\n\r\nLooking beyond the scope of a professional musician, Alon is an active member of Rhapsody in School, introducing classical music to schoolchildren of all ages. Furthermore, he supported the Live Music Now Foundation and has played in Daniel BarenboimвЂ™s West-Eastern Divan Orchestra. Animal protection is also an important issue for Alon; he has been an ambassador for the Pro Animale charity since 2021.",
+        "image": "artists/A-5300253-1503062293-7562.jpg",
+        "style": 4,
+        "booking_fee_per_hour": 1000
+    }
+},
+{
+    "model": "web.vinyl",
+    "pk": 1,
+    "fields": {
+        "artist": 5,
+        "title": "Drum Codes 1",
+        "cat_number": "PRR 014",
+        "release_date": "1995-01-01",
+        "price": 8.8,
+        "record_label": 1,
+        "cover_art": "planet-rhythm-records/PRR_014_XeN1nrC.jpg",
+        "genre": 1,
+        "style": 1,
+        "tracklist": "Drum Code 1\t\r\nAcid Code\t\r\nDrum Code 1:1",
+        "quantity": 1,
+        "condition": "very_good_plus",
+        "user": null,
+        "added_on": "2022-12-13T10:53:59.956Z"
+    }
+},
+{
+    "model": "web.vinyl",
+    "pk": 2,
+    "fields": {
+        "artist": 6,
+        "title": "Waveform Transmission Vol. 1",
+        "cat_number": "Tresor 11",
+        "release_date": "1992-06-01",
+        "price": 11.99,
+        "record_label": 2,
+        "cover_art": "tresor/Tresor_11.jpg",
+        "genre": 1,
+        "style": 1,
+        "tracklist": "EP 1.1\t\r\nA1\t\tPhase 4\t4:45\r\nA2\t\tJerical\t5:24\r\nEP 1.2\t\r\nB3\t\tChanges Of Life\t4:49\r\nB4\t\tBerlin\t5:48\r\nEP 2.1\t\r\nC1\t\tThe Hacker\t4:05\r\nC2\t\tLate Night\t4:51\r\nEP 2.2\t\r\nD3\t\tDNA\t4:17\r\nD4\t\tMan-Like\t4:38",
+        "quantity": 1,
+        "condition": "very_good",
+        "user": null,
+        "added_on": "2022-12-13T10:57:40.741Z"
+    }
+},
+{
+    "model": "web.vinyl",
+    "pk": 3,
+    "fields": {
+        "artist": 1,
+        "title": "Songs Of The Auvergne / Chants d'Auvergne",
+        "cat_number": "MDK 46509",
+        "release_date": "1982-01-01",
+        "price": 5.95,
+        "record_label": 3,
+        "cover_art": "cbs/MDK_46509.jpg",
+        "genre": 3,
+        "style": 5,
+        "tracklist": "1\t\tBaГЇlГЁro\t6:25\r\n2\t\tOГЇ, AyaГЇ\t3:07\r\n3\t\tLa DelaГЇssГЎdo\t5:19\r\n4\t\tPasso Pel Prat\t3:39\r\n5\t\tTГЁ, L'Co, TГЁ!\t0:43\r\n6\t\tPour L'Enfant\t2:58\r\n7\t\tDeux BourrГ©es A) N'aГЇ Pas LГ©u De MГ®o B) Lo CalhГ©\t5:26\r\n8\t\tLou Coucut\t1:34\r\n9\t\tL'AntouГЁno\t4:04\r\n10\t\tChut, Chut\t1:56\r\n11\t\tBrezairola\t3:28\r\n12\t\tUno Jionto Postouro\t3:13\r\n13\t\tLo FiolairГ©\t1:50\r\n14\t\tTrois BourrГ©es A) L'AГЇo DГЁ Rotso B) Ound' OnorГЁn Gorda C) Obal, Din Lou Limouzi\t6:42\r\n15\t\tLa Pastoura Als Camps\t2:49\r\n16\t\tPastourelle\t3:40\r\n17\t\tLa Pastrouletta E Lou Chibalie\t2:13\r\n18\t\tLou Boussu\t2:54\r\n19\t\tMalurous Qu'o Uno Fenno\t1:34\r\n20\t\tJou L'Pount D'o Mirabel\t4:28\r\n21\t\tPastorale\t3:49",
+        "quantity": 1,
+        "condition": "near_mint",
+        "user": null,
+        "added_on": "2022-12-13T11:00:22.450Z"
+    }
+},
+{
+    "model": "web.vinyl",
+    "pk": 4,
+    "fields": {
+        "artist": 7,
+        "title": "Breezin'",
+        "cat_number": "KBS 3111",
+        "release_date": "1976-06-05",
+        "price": 4.85,
+        "record_label": 4,
+        "cover_art": "warner-bros-records/KBS_3111.jpg",
+        "genre": 2,
+        "style": 6,
+        "tracklist": "A1 Breezin' 5:40\r\nA2 This Masquerade 8:03\r\nA3 Six To Four 5:06\r\nB1 Affirmation 7:01\r\nB2 So This Is Love? 7:03\r\nB3 Lady 5:49",
+        "quantity": 1,
+        "condition": "mint",
+        "user": null,
+        "added_on": "2022-12-13T11:04:41.284Z"
+    }
+},
+{
+    "model": "web.vinyl",
+    "pk": 5,
+    "fields": {
+        "artist": 9,
+        "title": "Lamb",
+        "cat_number": "532 968-2",
+        "release_date": "1996-09-30",
+        "price": 48.68,
+        "record_label": 5,
+        "cover_art": "fontana/532_968-2.jpg",
+        "genre": 1,
+        "style": 3,
+        "tracklist": "1 Lusty\t4:09\r\n2 God Bless\t5:54\r\n3 Cotton Wool\t5:07\r\n4 Trans Fatty Acid\t7:37\r\n5 Zero\t5:31\r\n6 Merge\t5:44\r\n7 Gold\t5:40\r\n8 Closer\t3:51\r\n9 GГіrecki\t6:30\r\n10.1 Feela\t6:44\r\n10.2 (silence)\t2:00\r\n10.3 Cotton Wool (Fila Brazillia Mix) 8:27",
+        "quantity": 1,
+        "condition": "good_plus",
+        "user": null,
+        "added_on": "2022-12-13T11:08:29.564Z"
+    }
+},
+{
+    "model": "web.vinyl",
+    "pk": 6,
+    "fields": {
+        "artist": 2,
+        "title": "Symphony No. 5 / Symphony No. 9",
+        "cat_number": "SMK 47615",
+        "release_date": "1988-04-03",
+        "price": 9.5,
+        "record_label": 6,
+        "cover_art": "sony-classical/SMK_47615.jpg",
+        "genre": 3,
+        "style": 5,
+        "tracklist": "Symphony No. 5 In D Minor, Op. 47\t\r\nI. Moderato\t16:13\r\nII. Allegretto\t4:54\r\nIII. Largo\t15:33\r\nIV. Allegro Non Troppo\t8:55\r\nSymphony No. 9 In E-Flat Major, Op. 70\t\r\nI. Allegro\t5:29\r\nII. Moderato\t8:07\r\nIII. Presto\t3:10\r\nIV. Largo   2:45\r\nV. Allegretto\t5:45",
+        "quantity": 1,
+        "condition": "new",
+        "user": null,
+        "added_on": "2022-12-13T11:11:45.495Z"
+    }
+},
+{
+    "model": "web.vinyl",
+    "pk": 7,
+    "fields": {
+        "artist": 4,
+        "title": "Easy To Assemble . Hard To Take Apart.",
+        "cat_number": "RTD 176.2933.0",
+        "release_date": "2001-07-07",
+        "price": 2.49,
+        "record_label": 7,
+        "cover_art": "form-function/RTD_176.2933.0.jpg",
+        "genre": 2,
+        "style": 7,
+        "tracklist": "A1 Man Sitzt Bequem.\r\nA2 Hot Boots Are No Fun!\r\nB1 These Precious Days, I'll Spend With You.\r\nB2 Choose Mode",
+        "quantity": 1,
+        "condition": "mint",
+        "user": null,
+        "added_on": "2022-12-13T11:23:06.023Z"
+    }
+},
+{
+    "model": "web.vinyl",
+    "pk": 8,
+    "fields": {
+        "artist": 10,
+        "title": "Dummy",
+        "cat_number": "828 522-1",
+        "release_date": "1994-10-01",
+        "price": 75.99,
+        "record_label": 8,
+        "cover_art": "go-beat/828_522-1.jpg",
+        "genre": 1,
+        "style": 3,
+        "tracklist": "A1 Mysterons\r\nA2 Sour Times\r\nA3 Strangers\r\nA4 It Could Be Sweet\r\nA5 Wandering Star\r\nB1 Numb\r\nB2 Roads\r\nB3 Pedestal\r\nB4 Biscuit\r\nB5 Glory Box",
+        "quantity": 1,
+        "condition": "new",
+        "user": null,
+        "added_on": "2022-12-13T11:27:05.729Z"
+    }
+},
+{
+    "model": "web.vinyl",
+    "pk": 9,
+    "fields": {
+        "artist": 8,
+        "title": "Every Generation",
+        "cat_number": "7243 4 77547 2 2",
+        "release_date": "2005-08-15",
+        "price": 17.0,
+        "record_label": 9,
+        "cover_art": "blue-note/7243_4_77547_2_2.jpg",
+        "genre": 2,
+        "style": 6,
+        "tracklist": "1 Young Child 4:38\r\n2 Never Get Back To Houston 3:03\r\n3 Every Generation 5:49\r\n4 Tomorrow 3:45\r\n5 O.T.B.A. Law (Outta Be A Law 4:42\r\n6 Love's Victory 4:25\r\n7 Thoughts & Memories 4:21\r\n8 As On 4:07",
+        "quantity": 1,
+        "condition": "good_plus",
+        "user": null,
+        "added_on": "2022-12-13T11:34:50.839Z"
+    }
+},
+{
+    "model": "web.vinyl",
+    "pk": 10,
+    "fields": {
+        "artist": 11,
+        "title": "Keep Hope Alive",
+        "cat_number": "COA 77105-1",
+        "release_date": "1995-09-09",
+        "price": 14.69,
+        "record_label": 10,
+        "cover_art": "city-of-angels/COA_77105-1.jpg",
+        "genre": 1,
+        "style": 2,
+        "tracklist": "A1 More\r\nA2 Keep Hope Alive (Trip-Hope Mix)\r\nB1 Keep Hope Alive (There Is Hope Mix)",
+        "quantity": 1,
+        "condition": "new",
+        "user": null,
+        "added_on": "2022-12-13T11:37:37.117Z"
+    }
+},
+{
+    "model": "web.vinyl",
+    "pk": 11,
+    "fields": {
+        "artist": 13,
+        "title": "Plucked Bach",
+        "cat_number": "PTC 5186 985",
+        "release_date": "2022-06-24",
+        "price": 13.99,
+        "record_label": 11,
+        "cover_art": "pentatone/PTC_5186_985.jpg",
+        "genre": 3,
+        "style": 4,
+        "tracklist": "1. Cello Suite No. 5 In C Minor, BWV 1011: I. PrГ©lude (Arr. A. Sariel For Cremonese Mandolin) 6:03\r\n    Cello Suite No. 1 In G Minor, BWV 1007 (Arr. A. Sariel For Mandolin)\r\n2. I. PrГ©lude\t3:32\r\n3. II. Allemande\t5:31\r\n4. III. Courante\t3:25\r\n5. IV. Sarabande\t2:36\r\n6. V. Menuetts I & II\t3:52\r\n7. VI. Gigue\t1:55\r\n8. Cello Suite I & II (Arr. A. Sariel For Barocque Guitar) 4:05\r\n\r\n    Cello Suite No. 2 In D MInor, BWV 1008 (Arr. A. Sariel For Liuto Attiorbato)\r\n9. I. PrГ©lude\t4:18\r\n10. II. Allemande\t4:04\r\n11. III. Courante\t2:37\r\n12. IV. Sarabande\t4:03\r\n13. V. Menuetts I & II\t2:51\r\n14. VI. Gigue\t3:20\r\n15. Cello Suite No. 2 In D Minor, BWV 1008 4:17\r\n    \r\n    Mandolin Partita\r\n16. I. Prelude\t2:11\r\n17. II. Allemande\t1:42\r\n18. III. Courante\t1:46\r\n19. IV. Sarabande\t1:45\r\n20. V. Menuetts I & II\t1:50\r\n21. VI. Gigue",
+        "quantity": 1,
+        "condition": "new",
+        "user": null,
+        "added_on": "2022-12-18T20:12:46.685Z"
+    }
+},
+{
+    "model": "web.profile",
+    "pk": 11,
+    "fields": {
+        "first_name": "Ivo",
+        "last_name": "Ivo",
+        "age": 33,
+        "gender": "male"
+    }
+},
+{
+    "model": "web.article",
+    "pk": 1,
+    "fields": {
+        "title": "Marcel Dettmann's upcoming release",
+        "date_added": "2022-12-18",
+        "topic": 1,
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse convallis eros malesuada pretium tincidunt. Etiam euismod tincidunt risus. Pellentesque felis est, tempus sed mi eu, ullamcorper fermentum dui. Fusce felis elit, tincidunt sit amet metus non, viverra ullamcorper est. Vivamus faucibus et tellus a ullamcorper. Vestibulum efficitur metus congue felis mollis, in ultrices arcu tempor. Donec eget vehicula nibh. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce vel facilisis est, sed commodo nisl. In scelerisque nisi lacinia, imperdiet arcu at, sollicitudin magna. Nullam nec tortor arcu. Praesent tortor lacus, accumsan pharetra consequat nec, auctor et erat. Quisque vel diam ut mauris placerat posuere.",
+        "image": "articles/marceldettmann.jpg",
+        "headline": false
+    }
+},
+{
+    "model": "web.article",
+    "pk": 2,
+    "fields": {
+        "title": "Article 2",
+        "date_added": "2022-12-18",
+        "topic": 2,
+        "body": "ASDASDSAD ASD DSA SA DSA ASD",
+        "image": "articles/HoeMe_B3_400x400.jpg",
+        "headline": null
+    }
+},
+{
+    "model": "web.article",
+    "pk": 3,
+    "fields": {
+        "title": "Article 3",
+        "date_added": "2022-11-14",
+        "topic": 2,
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse convallis eros malesuada pretium tincidunt. Etiam euismod tincidunt risus. Pellentesque felis est, tempus sed mi eu, ullamcorper fermentum dui. Fusce felis elit, tincidunt sit amet metus non, viverra ullamcorper est. Vivamus faucibus et tellus a ullamcorper. Vestibulum efficitur metus congue felis mollis, in ultrices arcu tempor. Donec eget vehicula nibh. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce vel facilisis est, sed commodo nisl. In scelerisque nisi lacinia, imperdiet arcu at, sollicitudin magna. Nullam nec tortor arcu. Praesent tortor lacus, accumsan pharetra consequat nec, auctor et erat. Quisque vel diam ut mauris placerat posuere.",
+        "image": "articles/Phidipus_regius.jpg",
+        "headline": null
+    }
+},
+{
+    "model": "web.article",
+    "pk": 4,
+    "fields": {
+        "title": "Article 4",
+        "date_added": "2022-11-15",
+        "topic": 3,
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse convallis eros malesuada pretium tincidunt. Etiam euismod tincidunt risus. Pellentesque felis est, tempus sed mi eu, ullamcorper fermentum dui. Fusce felis elit, tincidunt sit amet metus non, viverra ullamcorper est. Vivamus faucibus et tellus a ullamcorper. Vestibulum efficitur metus congue felis mollis, in ultrices arcu tempor. Donec eget vehicula nibh. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce vel facilisis est, sed commodo nisl. In scelerisque nisi lacinia, imperdiet arcu at, sollicitudin magna. Nullam nec tortor arcu. Praesent tortor lacus, accumsan pharetra consequat nec, auctor et erat. Quisque vel diam ut mauris placerat posuere.",
+        "image": "articles/glass_man_120p.jpg",
+        "headline": null
+    }
+},
+{
+    "model": "web.article",
+    "pk": 5,
+    "fields": {
+        "title": "Article 5",
+        "date_added": "2022-11-01",
+        "topic": 7,
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse convallis eros malesuada pretium tincidunt. Etiam euismod tincidunt risus. Pellentesque felis est, tempus sed mi eu, ullamcorper fermentum dui. Fusce felis elit, tincidunt sit amet metus non, viverra ullamcorper est. Vivamus faucibus et tellus a ullamcorper. Vestibulum efficitur metus congue felis mollis, in ultrices arcu tempor. Donec eget vehicula nibh. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce vel facilisis est, sed commodo nisl. In scelerisque nisi lacinia, imperdiet arcu at, sollicitudin magna. Nullam nec tortor arcu. Praesent tortor lacus, accumsan pharetra consequat nec, auctor et erat. Quisque vel diam ut mauris placerat posuere.",
+        "image": "articles/Beetle_Eupholus_chevrolati_photo_taken_by_David_JanglГ¶v.jpg",
+        "headline": null
+    }
+},
+{
+    "model": "web.article",
+    "pk": 6,
+    "fields": {
+        "title": "We are opening our 4th location in March 3023",
+        "date_added": "2022-11-01",
+        "topic": null,
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse convallis eros malesuada pretium tincidunt. Etiam euismod tincidunt risus. Pellentesque felis est, tempus sed mi eu, ullamcorper fermentum dui. Fusce felis elit, tincidunt sit amet metus non, viverra ullamcorper est. Vivamus faucibus et tellus a ullamcorper. Vestibulum efficitur metus congue felis mollis, in ultrices arcu tempor. Donec eget vehicula nibh. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce vel facilisis est, sed commodo nisl. In scelerisque nisi lacinia, imperdiet arcu at, sollicitudin magna. Nullam nec tortor arcu. Praesent tortor lacus, accumsan pharetra consequat nec, auctor et erat. Quisque vel diam ut mauris placerat posuere.",
+        "image": "articles/record_store.jpg",
+        "headline": true
+    }
+},
+{
+    "model": "thumbnails.source",
+    "pk": 1,
+    "fields": {
+        "name": "record_labels/fBdqcJm7VwXhwxmuzxY7pa.jpg"
+    }
+},
+{
+    "model": "thumbnails.source",
+    "pk": 2,
+    "fields": {
+        "name": "record_labels/D5gQBurGq8vNqExicsahFi.jpg"
+    }
+},
+{
+    "model": "thumbnails.source",
+    "pk": 3,
+    "fields": {
+        "name": "tresor/Tresor_11.jpg"
+    }
+},
+{
+    "model": "thumbnails.source",
+    "pk": 4,
+    "fields": {
+        "name": "record_labels/UinUdxnzJpmUbukRoFpJNp.jpg"
+    }
+},
+{
+    "model": "thumbnails.source",
+    "pk": 5,
+    "fields": {
+        "name": "cbs/MDK_46509.jpg"
+    }
+},
+{
+    "model": "thumbnails.source",
+    "pk": 6,
+    "fields": {
+        "name": "record_labels/nNHfUJ2UQeZ6q69KKd2jsX.jpg"
+    }
+},
+{
+    "model": "thumbnails.source",
+    "pk": 7,
+    "fields": {
+        "name": "warner-bros-records/KBS_3111.jpg"
+    }
+},
+{
+    "model": "thumbnails.source",
+    "pk": 8,
+    "fields": {
+        "name": "record_labels/gMQgYoUfPrVnfCZhMoi2AL.jpg"
+    }
+},
+{
+    "model": "thumbnails.source",
+    "pk": 9,
+    "fields": {
+        "name": "fontana/532_968-2.jpg"
+    }
+},
+{
+    "model": "thumbnails.source",
+    "pk": 10,
+    "fields": {
+        "name": "record_labels/6PUQm9odyPFo62Mg4J9z6p.jpg"
+    }
+},
+{
+    "model": "thumbnails.source",
+    "pk": 11,
+    "fields": {
+        "name": "sony-classical/SMK_47615.jpg"
+    }
+},
+{
+    "model": "thumbnails.source",
+    "pk": 12,
+    "fields": {
+        "name": "record_labels/5ynkCvuYaZ7b645SjahqhC.jpg"
+    }
+},
+{
+    "model": "thumbnails.source",
+    "pk": 13,
+    "fields": {
+        "name": "form-function/RTD_176.2933.0.jpg"
+    }
+},
+{
+    "model": "thumbnails.source",
+    "pk": 14,
+    "fields": {
+        "name": "record_labels/ZP9np8tWkVRh2qGyrRgonf.jpg"
+    }
+},
+{
+    "model": "thumbnails.source",
+    "pk": 15,
+    "fields": {
+        "name": "go-beat/828_522-1.jpg"
+    }
+},
+{
+    "model": "thumbnails.source",
+    "pk": 16,
+    "fields": {
+        "name": "record_labels/SVh3xACncitsdmUtyPYTCr.jpg"
+    }
+},
+{
+    "model": "thumbnails.source",
+    "pk": 17,
+    "fields": {
+        "name": "blue-note/7243_4_77547_2_2.jpg"
+    }
+},
+{
+    "model": "thumbnails.source",
+    "pk": 18,
+    "fields": {
+        "name": "record_labels/cNcmJNP5jcCCmrQ2RsM523.jpg"
+    }
+},
+{
+    "model": "thumbnails.source",
+    "pk": 19,
+    "fields": {
+        "name": "city-of-angels/COA_77105-1.jpg"
+    }
+},
+{
+    "model": "thumbnails.source",
+    "pk": 20,
+    "fields": {
+        "name": "planet-rhythm-records/PRR_014_XeN1nrC.jpg"
+    }
+},
+{
+    "model": "thumbnails.source",
+    "pk": 21,
+    "fields": {
+        "name": "record_labels/bubYq4TRvFchESe5qArvkh.jpg"
+    }
+},
+{
+    "model": "thumbnails.source",
+    "pk": 22,
+    "fields": {
+        "name": "pentatone/PTC_5186_985.jpg"
+    }
+},
+{
+    "model": "thumbnails.source",
+    "pk": 23,
+    "fields": {
+        "name": "blue-note/BN22.jpg"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 149,
+    "fields": {
+        "action_time": "2022-12-21T10:49:02.530Z",
+        "user": [
+            "qwe@qwe.com"
+        ],
+        "content_type": [
+            "web",
+            "profile"
+        ],
+        "object_id": "11",
+        "object_repr": "Ivo Ivo",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"First name\", \"Last name\", \"Age\", \"Gender\"]}}]"
+    }
+}
+]

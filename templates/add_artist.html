@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load crispy_forms_filters %}
+{% block content %}
+    <body>
+    <br>
+    <h1 class="text-center">Add Artist</h1>
+    <form method="post" action="{% url 'artist add' %}" class="card p-4 mx-5">
+        <div class="row">
+
+            {% for field,errors in form.errors.items %}
+                {% for error in errors %}
+                    <p class="messages alert alert-danger" style="text-align: center;">{{ error|striptags }}</p>
+                {% endfor %}
+            {% endfor %}
+            {% if request.user.is_superuser %}
+                {{ form|crispy }}
+                {% csrf_token %}
+            {% else %}
+                <div>{{ form.name|as_crispy_field }}</div>
+                <div>{{ form.age|as_crispy_field }}</div>
+                <div>{{ form.location|as_crispy_field }}</div>
+                <div>{{ form.bio|as_crispy_field }}</div>
+                <input type="hidden" name="next" value="{{ next }}">
+
+                {% csrf_token %}
+                </div>
+            {% endif %}
+        <button type="submit" class="btn btn-dark" style="align-content: center">Submit</button>
+    </form>
+    </body>
+{% endblock %}
+
+{#<form method="post" action="{% url 'add object' %}">#}
+{#    {{ form.as_p }}#}
+{#    <input type="hidden" name="next" value="{{ next }}">#}
+{#    <button>Submit</button>#}
+{#    {% csrf_token %}#}
+{#</form>#}

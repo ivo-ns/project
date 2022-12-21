@@ -1,0 +1,246 @@
+body {
+    background-color: hsl(0, 0%, 98%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: hsl(0, 0%, 30%);
+}
+
+.box-element {
+    box-shadow: hsl(0, 0%, 80%) 0 0 16px;
+    background-color: #fff;
+    border-radius: 4px;
+    padding: 10px;
+}
+
+/*.box-element{*/
+/*	box-shadow:hsl(0, 0%, 80%) 0 0 16px;*/
+/*	background-color: #fff;*/
+/*	border-radius: 4px;*/
+/*	width: 70%;*/
+/*	padding: 10px;*/
+/*}*/
+
+.thumbnail {
+    width: 100%;
+    height: 200px;
+    -webkit-box-shadow: -1px -3px 5px -2px rgba(214, 214, 214, 1);
+    -moz-box-shadow: -1px -3px 5px -2px rgba(214, 214, 214, 1);
+    box-shadow: -1px -3px 5px -2px rgba(214, 214, 214, 1);
+}
+
+/*.thumbnail{*/
+/*	width: 70%;*/
+/*	height: 250px;*/
+/*	-webkit-box-shadow: -1px -3px 5px -2px rgba(214,214,214,1);*/
+/*    -moz-box-shadow: -1px -3px 5px -2px rgba(214,214,214,1);*/
+/*    box-shadow: -1px -3px 5px -2px rgba(214,214,214,1);*/
+/*}*/
+
+.product {
+    border-radius: 0 0 4px 4px;
+}
+
+.bg-dark {
+    background-color: midnightblue !important;
+}
+
+#cart-icon {
+    width: 29px;
+    position: absolute;
+    top: 13px;
+    right: 25px;
+    float: right;
+    display: table;
+    margin-left: 5px;
+}
+
+/*#cart-icon{*/
+/*	width:25px;*/
+/*	display: inline-block;*/
+/*	margin-left: 3px;*/
+/*	margin-bottom: -11px;*/
+/*}*/
+
+/*#cart-total {*/
+/*    display: block;*/
+/*    text-align: center;*/
+/*    color: #fff;*/
+/*    background-color: red;*/
+/*    width: 20px;*/
+/*    height: 25px;*/
+/*    border-radius: 50%;*/
+/*    font-size: 14px;*/
+/*}*/
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
+
+#cart-total {
+    /*display: inline-table;*/
+    text-align: center;
+    color: #fff;
+    background-color: red;
+    top: 13px;
+    position: absolute;
+    right: 0;
+    width: 18px;
+    height: 20px;
+    border-radius: 50%;
+    font-size: 12px;
+}
+
+.col-lg-4, .col-lg-6, .col-lg-8, .col-lg-12 {
+    margin-top: 10px;
+}
+
+/*.col-lg-4, .col-lg-6, .col-lg-8, .col-lg-12 {*/
+/*    margin-top: 10px;*/
+/*    margin-left: 100px;*/
+/*    !*width: 70%;*!*/
+/*}*/
+
+.btn {
+    border-radius: 0;
+}
+
+.row-image {
+    width: 100px;
+}
+
+.form-field {
+    width: 250px;
+    display: inline-block;
+    padding: 5px;
+}
+
+.cart-row {
+    display: flex;
+    align-items: stretch;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ececec;
+
+}
+
+.quantity {
+    display: inline-block;
+    font-weight: 700;
+    padding-right: 10px;
+
+
+}
+
+.chg-quantity {
+    width: 12px;
+    cursor: pointer;
+    display: block;
+    margin-top: 5px;
+    transition: .1s;
+}
+
+.chg-quantity:hover {
+    opacity: .6;
+}
+
+
+.hidden {
+    display: none !important;
+}
+
+.blog-footer {
+    min-height: 50px;
+    padding: 1.5rem 0;
+    color: #727272;
+    text-align: center;
+    background-color: #f9f9f9;
+    border-top: .05rem solid #e5e5e5;
+    margin-top: auto;
+
+    /*padding: 2.5rem 0;*/
+    /*color: #727272;*/
+    /*text-align: center;*/
+    /*background-color: #f9f9f9;*/
+    /*!*border-top: .05rem solid #e5e5e5;*!*/
+    /*position: absolute;*/
+    /*bottom: 0;*/
+    /*left: 0;*/
+    /*width: 100%;*/
+    /*height: 120px;*/
+}
+
+.blog-footer p:last-child {
+    margin-bottom: 0;
+}
+
+#signin_form {
+    text-align: center;
+    margin: auto;
+    width: 40%;
+    position: center;
+
+}
+
+#signin_text {
+    text-align: center;
+}
+
+.signin_box {
+    margin: 0 auto;
+    /*margin: 100px;*/
+    width: 500px;
+    padding: 25px;
+    background: #f9f9f9;
+    border: 2px solid #333;
+    border-radius: 5%;
+}
+
+.vinyl_box {
+    margin: 0 auto;
+    /*margin: 100px;*/
+    width: 500px;
+    padding: 25px;
+    background: #f9f9f9;
+    border: 2px solid #333;
+    border-radius: 5%;
+}
+
+#cent {
+    min-height: 50vh; /* minimum height = screen height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.shadowtext {
+    text-shadow: 2px 4px 4px rgba(30, 14, 26, 0.6);
+}
+
+.signin_box .input_field * {
+    width: 150%;
+    margin-left: -36px;
+
+}
+
+.articlebox {
+    display: flex;
+    flex-direction: row;
+}
+
+.card-image {
+    height: 290px;
+    width: auto;
+    /*background-repeat: no-repeat;*/
+    /*background-position: 50% 50%;*/
+    /*background-size: cover;*/
+    /*width: 300px;*/
+    /*height: 300px;*/
+}
+

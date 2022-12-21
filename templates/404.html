@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <img src="{% static 'images/404.jpg' %}" alt="404" href="{% url 'index' %}" class="center"
+         style="max-width: 100%; height: auto">
+
+{% endblock %}

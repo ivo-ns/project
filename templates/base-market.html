@@ -1,0 +1,48 @@
+{#<style>#}
+{#    #nav-ul {#}
+{#        list-style-type: none;#}
+{#        margin: 0;#}
+{#        padding: 0;#}
+{#    }#}
+{##}
+{#    li {#}
+{#        display: inline-block;#}
+{#        *display: inline; /*IE7*/#}
+{#        *zoom: 1; /*IE7*/#}
+{#        background: blue;#}
+{#        color: white;#}
+{#        margin-right: 10px;#}
+{#    }#}
+{##}
+{#    #nav-a {#}
+{#        display: block;#}
+{#        padding: 8px;#}
+{#        background-color: #dddddd;#}
+{#    }#}
+{#</style>#}
+{#<header><h1><a href="{% url 'index' %}">Around The World Record Store and Booking Agency</a></h1></header>#}
+{#{% url 'marketplace' as marketplace_url %}#}
+{#{% url 'explore' as explore_url %}#}
+{##}
+{#<div>#}
+{#    <ul id="nav-ul">#}
+{#        {% if request.path != '/vinyls/' %}#}
+{#            <li><a id="nav-a" href="{% url 'vinyls' %}">Home</a></li>#}
+{#        {% endif %}#}
+{#        <li><a id="nav-a" href="{% url 'marketplace' %}">Marketplace</a></li>#}
+{#        <li><a id="nav-a" href="{% url 'explore' %}">Explore</a></li>#}
+{#        {% if not user.is_authenticated %}#}
+{#            <li><a id="nav-a" href="{% url 'sign in' %}?next={{ request.path }}">Sign Up/Sign In</a></li>#}
+{#        {% else %}#}
+{#            <li><a id="nav-a"#}
+{#                   href="{% url 'profile' pk=request.user.pk %}">Hi, {{ request.user.profile.first_name }}</a>#}
+{#            <li><a id="nav-a" href="{% url 'sign out' %}">Sign out</a>#}
+{#            </li>#}
+{#        {% endif %}#}
+{#    </ul>#}
+{#</div>#}
+{#{% block content %}#}
+{##}
+{#{% endblock %}#}
+{##}
+{#<footer>All rights reserved. ©2022</footer>#}

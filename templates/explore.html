@@ -1,0 +1,139 @@
+{% extends 'base.html' %}
+
+{% block title %}<title> Explore </title>{% endblock %}
+
+{% block content %}
+    <br>
+    <h2>Artists</h2>
+    <div class=" container">
+        <div class="row">
+            {% for artist in artists %}
+                <div class="col-md-3">
+                    <div class="card">
+                        {% if artist.image %}
+                            <div class="card-image">
+                                <img src="{{ artist.image.url }}" alt="artist_photo" class="card-img-top"
+                                     style="height: 300px;object-fit: cover">
+                            </div>
+                        {% endif %}
+                        <div class="card-body">
+                            <div class="card-title">
+                                Name: <a
+                                    href="{% url 'artist page' slug=artist.slug %}">{{ artist.name }}</a>
+                            </div>
+                            <div class="card-subtitle">
+                                Bio: {{ artist.bio|truncatechars:25 }}
+                            </div>
+                            <div class="card-text">
+                                Style: <a
+                                    href="{% url 'style page' slug=artist.style.slug %}">{{ artist.style.name }}</a>
+                            </div>
+                            <hr>
+                            <a class="btn btn-outline-success" href="{% url 'artist page' slug=artist.slug %}">View</a>
+                        </div>
+                    </div>
+                    <br>
+                </div>
+
+            {% endfor %}
+        </div>
+    </div>
+
+    <h2>Genres</h2>
+    <div class=" container">
+        <div class="row">
+            {% for genre in genres %}
+                <div class="col-md-3">
+                    <div class="card">
+                        {% if genre.image %}
+                            <div class="card-image">
+                                <img src="{{ genre.image.url }}" alt="artist_photo" class="card-img-top"
+                                     style="height: 300px;object-fit: cover">
+                            </div>
+                        {% endif %}
+                        <div class="card-body">
+                            <div class="card-title">
+                                Name: <a
+                                    href="{% url 'genre page' slug=genre.slug %}">{{ genre.name }}</a>
+                            </div>
+                            <div class="card-subtitle">
+                                {{ genre.description|truncatechars:25 }}
+                            </div>
+                            <hr>
+                            <a class="btn btn-outline-success" href="{% url 'genre page' slug=genre.slug %}">View</a>
+                        </div>
+                    </div>
+                    <br>
+                </div>
+
+            {% endfor %}
+        </div>
+    </div>
+
+    <h2>Styles</h2>
+        <div class=" container">
+        <div class="row">
+            {% for style in styles %}
+                <div class="col-md-3">
+                    <div class="card">
+                        {% if style.image %}
+                            <div class="card-image">
+                                <img src="{{ style.image.url }}" alt="artist_photo" class="card-img-top"
+                                     style="height: 300px;object-fit: cover">
+                            </div>
+                        {% endif %}
+                        <div class="card-body">
+                            <div class="card-title">
+                                Name: <a
+                                    href="{% url 'style page' slug=style.slug %}">{{ style.name }}</a>
+                            </div>
+                            <div class="card-subtitle">
+                                {{ style.description|truncatechars:25 }}
+                            </div>
+                            <hr>
+                            <a class="btn btn-outline-success" href="{% url 'style page' slug=style.slug %}">View</a>
+                        </div>
+                    </div>
+                    <br>
+                </div>
+
+            {% endfor %}
+        </div>
+    </div>
+
+    <h2>Venues</h2>
+    <div class=" container">
+        <div class="row">
+            {% for artist in artistss %}
+                <div class="col-md-3">
+                    <div class="card">
+                        {% if artist.image %}
+                            <div class="card-image">
+                                <img src="{{ artist.image.url }}" alt="artist_photo" class="card-img-top"
+                                     style="height: 300px;object-fit: cover">
+                            </div>
+                        {% endif %}
+                        <div class="card-body">
+                            <div class="card-title">
+                                Name: <a
+                                    href="{% url 'artist page' slug=artist.slug %}">{{ artist.name }}</a>
+                            </div>
+                            <div class="card-subtitle">
+                                Bio: {{ artist.bio|truncatechars:25 }}
+                            </div>
+                            <div class="card-text">
+                                Style: <a
+                                    href="{% url 'style page' slug=artist.style.slug %}">{{ artist.style.name }}</a>
+                            </div>
+                            <hr>
+                            <a class="btn btn-outline-success" href="{% url 'artist page' slug=artist.slug %}">View</a>
+                        </div>
+                    </div>
+                    <br>
+                </div>
+
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block content %}
+    <br>
+    <div id="cent">
+        <div class="signin_box">
+            <h1 id="signin_text">Sign Up</h1>
+            <br>
+            <form id='signin_form' method="post" action="{% url 'sign up' %}">
+                {% for field,errors in form.errors.items %}
+                    {% for error in errors %}
+                        <p class="messages alert alert-danger" style="text-align: center;">{{ error|striptags }}</p>
+                    {% endfor %}
+                {% endfor %}
+                {#        {{ form.as_p }}#}
+                {% csrf_token %}
+                <p class="input_field">{{ form.email }}</p>
+                <p class="input_field">{{ form.password1 }}</p>
+                <p class="input_field">{{ form.password2 }}</p>
+                <p class="input_field">{{ form.first_name }}</p>
+                <p class="input_field">{{ form.last_name }}</p>
+                <p class="input_field">{{ form.age }}</p>
+                <p class="input_field">{{ form.gender }}</p>
+                {#instead of overriding get_success_url#}
+                <input name="next" type="hidden" value="{{ next }}">
+
+
+                <button type="submit" class="btn btn-dark">Submit</button>
+                <br><br>
+                {% if next %}
+                    <div>Already have an account?</div> <div><a href="{% url 'sign in' %}?{{ next }}">Sign in here</a></div>
+                {% else %}
+                    <p>Already have an account? <a href="{% url 'sign in' %}">Sign in here</a></p>
+                {% endif %}
+
+
+            </form>
+        </div>
+    </div>
+
+{% endblock %}

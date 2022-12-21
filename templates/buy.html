@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}<title>Buy Vinyl</title>{% endblock %}
+{% block content %}
+    <br>
+    {#Search Form#}
+    <form method="get" action="{% url 'buy' %}" class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search..." aria-label="Search" name="q">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+    <br>
+    <style>
+        .home-container {
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+        }
+    </style>
+    <div class="home-container">
+        <div>
+            <h3>Browse</h3>
+            <hr style="width: 70%">
+            <strong><h5><a href="{% url 'buy' %}">All</a></h5></strong>
+            <strong><h5>Genre</h5></strong>
+            {% for genre in genres %}
+                <div>
+                    <a href="{% url 'buy' %}?q={{ genre.name }}">
+                        {{ genre.name }}
+                    </a>
+                </div>
+            {% endfor %}
+            <hr style="width: 70%">
+            <strong><h5>Style</h5></strong>
+            {% for style in styles %}
+                <div>
+                    <a href="{% url 'buy' %}?q={{ style.name }}">
+                        {{ style.name }}
+                    </a>
+                </div>
+            {% endfor %}
+            <hr style="width: 70%">
+            <strong><h5>Record Label</h5></strong>
+            {% for record_label in record_labels %}
+                <div>
+                    <a href="{% url 'buy' %}?q={{ record_label.name }}">
+                        {{ record_label.name }}
+                    </a>
+                </div>
+            {% endfor %}
+            <hr style="width: 70%">
+            <strong><h5>Artist</h5></strong>
+            {% for artist in artists %}
+                <div>
+                    <a href="{% url 'buy' %}?q={{ artist.name }}">
+                        {{ artist.name }}
+                    </a>
+                </div>
+            {% endfor %}
+            <hr style="width: 70%">
+            <li class="filters"><a class="filter_by" href="?sort=l2h">Price: low to high</a></li>
+            <li class="filters"><a class="filter_by" href="?sort=h2l">Price: high to low</a></li>
+            <li class="filters"><a class="filter_by" href="?newest_release">Release date: Newest</a></li>
+            <li class="filters"><a class="filter_by" href="?oldest_release">Release date: Oldest</a></li>
+            <li class="filters"><a class="filter_by" href="?date_added_new">Date added: Newest</a></li>
+            <li class="filters"><a class="filter_by" href="?date_added_old">Date added: Oldest</a></li>
+
+        </div>
+        <div class="container">
+            <div class="row">
+                {% for vinyl in vinyls %}
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-image">
+                                <a href="{% url 'vinyl page' pk=vinyl.pk %}"><img src="{{ vinyl.cover_art.url }}"
+                                                                                  alt="vinyl_cover"
+                                                                                  class="card-img-top"
+                                                                                  style="height: 300px;object-fit: cover"></a>
+                            </div>
+                            <div class="card-body">
+                                <div class="card-title">
+                                    Artist(s): <a
+                                        href="{% url 'artist page' slug=vinyl.artist.slug %}">{{ vinyl.artist }}</a>
+                                </div>
+                                <div class="card-subtitle">
+                                    Title: {{ vinyl.title|truncatechars:25 }}
+                                </div>
+                                <div class="card-text">
+                                    Label: <a
+                                        href="{% url 'label page' slug=vinyl.record_label.slug %}">{{ vinyl.record_label.name }}</a>
+                                </div>
+                                <hr>
+                                <button class="btn btn-outline-secondary add-btn">Add to Cart</button>
+                                <a class="btn btn-outline-success" href="{% url 'vinyl page' pk=vinyl.pk %}">View</a>
+                                <h7 style="display: inline-block;float: right;margin-top: 5px">
+                                    <b>${{ vinyl.price|floatformat:2 }}</b>
+                                </h7>
+                            </div>
+                        </div>
+                        <br>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <br>
+
+    <div class="d-inline-flex p-2 bd-highlight">
+        <div class="row">
+            <div class="col-5">
+                <img src="{{ article.image.url }}" alt="article" width="100%"
+                     style="box-shadow: 10px 10px 5px #ccc">
+            </div>
+            <div class="col-md-7">
+                <div><h1>{{ article.title }}</h1></div>
+                <hr>
+                {% if article.topic %}
+                <div><h4>Topic: <a href="{% url 'style page' slug=article.topic.slug %}">{{ article.topic }}</a></h4>
+                    <br>
+                </div>
+                {% endif %}
+                <div><h4>{{ article.body }}</h4></div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
