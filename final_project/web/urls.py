@@ -1,10 +1,11 @@
 from django.urls import path, include
 
-from final_project.web.views import IndexView, VinylStoreView, BookingAgencyView, ArtistsListView, ArtistsDetailView, \
+from final_project.web.views import IndexView, BookingAgencyView, ArtistsListView, ArtistsDetailView, \
     ArtistsAddView, ArtistsEditView, ArtistsDeleteView, LabelListView, LabelAddView, LabelDetailView, LabelEditView, \
     LabelDeleteView, StylesListView, GenresListView, ExploreView, SignInView, SignUpView, SignOutView, \
-    BuyVinylView, SellVinylView, ProfileView, VinylDetailsView, TestView, CartView, CheckOutView, BlogView, \
-    ArticleDetailView, StylesDetailView, GenresDetailView, NotFoundView
+    VinylBuyView, VinylSellView, ProfileView, VinylDetailsView, TestView, BlogView, \
+    ArticleDetailView, StylesDetailView, GenresDetailView, VinylEditView, cart, checkout, updateItem, \
+    processOrder, vinylstorefbview
 
 urlpatterns = (
     # Home URL
@@ -13,17 +14,21 @@ urlpatterns = (
     path('sign-in/', SignInView.as_view(), name='sign in'),
     path('sign-out/', SignOutView.as_view(), name='sign out'),
     path('profile/<int:pk>/', ProfileView.as_view(), name='profile'),
-    path('cart/', CartView.as_view(), name='cart'),
-    path('checkout/', CheckOutView.as_view(), name='checkout'),
+    path('cart/', cart, name='cart'),
+    path('checkout/', checkout, name='checkout'),
+    path('update_item/', updateItem, name='update item'),
+    path('process_order/', processOrder, name='process order'),
     path('blog/', BlogView.as_view(), name='blog'),
     path('articles/<int:pk>', ArticleDetailView.as_view(), name='article page'),
 
     # Vinyls URLs
     path('vinyls/', include([
-        path('', VinylStoreView.as_view(), name='vinyls'),
-        path('buy/', BuyVinylView.as_view(), name='buy'),
-        path('sell/', SellVinylView.as_view(), name='sell'),
+        # path('', VinylStoreView.as_view(), name='vinyls'),
+        path('', vinylstorefbview, name='vinyls'),
+        path('buy/', VinylBuyView.as_view(), name='buy'),
+        path('sell/', VinylSellView.as_view(), name='sell'),
         path('details/<int:pk>', VinylDetailsView.as_view(), name='vinyl page'),
+        path('edit/<int:pk>', VinylEditView.as_view(), name='vinyl edit'),
     ])),
     # Explore
     path('explore/', include([

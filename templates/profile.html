@@ -1,7 +1,82 @@
-{% extends 'base-market.html' %}
+{% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
-<body>
-Hi, {{ object.profile.first_name }}
-</body>
+    <br>
+
+    <div class="d-inline-flex p-2 bd-highlight">
+        <div class="row">
+            <div class="col-2">
+                {% if object.profile.image %}
+                    <img src="{{ object.profile.image.url }}" alt="profile_pic" width="100%"
+                         style="box-shadow: 10px 10px 5px #ccc">
+                {% else %}
+                    <img src="{% static 'images/default_profile_pic.png' %}" alt="profile_pic" width="100%"
+                         style="box-shadow: 10px 10px 5px #ccc">
+                {% endif %}
+            </div>
+            <div class="col-md-7">
+                <div><h1>Profile Information</h1></div>
+                <hr>
+                <div>
+                    <h4>Username: {{ object }}</h4>
+                    <h4>First name: {{ object.profile.first_name }}</h4>
+                    <h4>Last name: {{ object.profile.last_name }}</h4>
+                    <h4>Age: {{ object.profile.age }}</h4>
+                    <h4>Gender: {{ object.profile.gender }}</h4>
+
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div>
+            <h4>Vinyls</h4>
+        </div>
+        <div class="container">
+            <div class="row">
+                {% for vinyl in vinyls %}
+                    <div class="col-md-3">
+                        <div class="card">
+                            <div class="card-image">
+                                {% if vinyl.cover_art %}
+                                    <img src="{{ vinyl.cover_art.url }}" alt="vinyl_cover"
+                                         class="card-img-top"
+                                         style="height: 300px;object-fit: cover">
+                                {% else %}
+                                    <img src="{% static 'images/default_vinyl_pic.jpg' %}"
+                                         alt="default_vinyl_cover" class="card-img-top"
+                                         style="height: 300px;object-fit: cover">
+                                {% endif %}
+                            </div>
+                            <div class="card-body">
+                                <div class="card-title">
+                                    Artist(s): <a
+                                        href="{% url 'artist page' slug=vinyl.artist.slug %}">{{ vinyl.artist }}</a>
+                                </div>
+                                <div class="card-subtitle">
+                                    Title: {{ vinyl.title|truncatechars:25 }}
+                                </div>
+                                <div class="card-text">
+                                    Label: <a
+                                        href="{% url 'label page' slug=vinyl.record_label.slug %}">{{ vinyl.record_label.name }}</a>
+                                </div>
+                                <hr>
+                                <a class="btn btn-outline-secondary add-btn" href="{% url 'vinyl edit' pk=vinyl.pk %}">Edit</a>
+                                <a class="btn btn-outline-success"
+                                   href="{% url 'vinyl page' pk=vinyl.pk %}">View</a>
+                                <h7 style="display: inline-block;float: right;margin-top: 5px">
+                                    <b>${{ vinyl.price|floatformat:2 }}</b>
+                                </h7>
+                            </div>
+                        </div>
+                        <br>
+                    </div>
+                {% endfor %}
+            </div>
+            <div style="text-align: right;"><a href="{% url 'buy' %}?date_added_new">More..</a></div>
+
+        </div>
+    </div>
 {% endblock %}

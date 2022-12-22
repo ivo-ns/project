@@ -1,7 +1,7 @@
 from django.contrib.auth import get_user_model, forms as auth_forms
 from django import forms
-from django.contrib.auth.forms import AuthenticationForm, UsernameField
-from django.core.validators import MinLengthValidator, MinValueValidator, MaxValueValidator
+from django.contrib.auth.forms import AuthenticationForm
+from django.core.validators import MinLengthValidator
 
 from final_project.web.models import Profile, Vinyl, Artist, RecordLabel, Gender, age_validator
 from final_project.web.utils import validate_alphabet_characters_english
@@ -65,11 +65,6 @@ class SignInForm(AuthenticationForm):
             attrs={"autocomplete": "current-password", 'placeholder': 'Password...', 'class': "form-control"}),
     )
 
-    # def __init__(self, *args, **kwargs):
-    #     super(SignInForm, self).__init__(*args, **kwargs)
-    #     for visible in self.visible_fields():
-    #         visible.field.widget.attrs['class'] = 'form-control'
-
 
 class ArtistAddForm(forms.ModelForm):
     class Meta:
@@ -91,33 +86,8 @@ class VinylAddForm(forms.ModelForm):
             }),
         }
 
-    # artist = AutoCompleteSelectMultipleField('vinyl', required=False, help_text=None)
-
 
 class LabelAddForm(forms.ModelForm):
     class Meta:
         model = RecordLabel
         fields = '__all__'
-
-        # if UserModel.is_superuser():
-        #     fields = '__all__'
-        # else:
-        #     fields = ('name', 'age', 'location', 'bio')
-
-    # Create empty profile
-    # def save(self, commit=True):
-    #     user = super().save(commit=commit)
-    #     profile = Profile(
-    #         user=user,
-    #     )
-    #     if commit:
-    #         profile.save()
-
-#
-# class SellForm(forms.ModelForm):
-#     class Meta:
-#         model = Vinyl
-#         fields = '__all__'
-#         widgets = {
-#             'style': Select(),
-#         }

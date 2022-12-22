@@ -51,7 +51,7 @@
                                     href="{% url 'label page' slug=vinyl.record_label.slug %}">{{ vinyl.record_label.name }}</a>
                             </div>
                             <hr>
-                            <button class="btn btn-outline-secondary add-btn">Add to Cart</button>
+                            <button data-product="{{ vinyl.pk }}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
                             <a class="btn btn-outline-success" href="{% url 'vinyl page' pk=vinyl.pk %}">View</a>
                             <h7 style="display: inline-block;float: right;margin-top: 5px">
                                 <b>${{ vinyl.price|floatformat:2 }}</b>

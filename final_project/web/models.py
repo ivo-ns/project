@@ -143,10 +143,12 @@ class Artist(models.Model):
         null=True,
         blank=True,
     )
-    style = models.ForeignKey(Style,
-                              on_delete=models.SET_NULL,
-                              null=True,
-                              blank=True)
+    style = models.ForeignKey(
+        Style,
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True
+    )
     booking_fee_per_hour = models.PositiveIntegerField(
         verbose_name="Booking Fee per hour",
         null=True,
@@ -183,7 +185,11 @@ class Condition(ChoicesEnumMixin, Enum):
 
 
 class Vinyl(models.Model):
-    artist = models.ForeignKey(Artist, on_delete=models.CASCADE, null=True)
+    artist = models.ForeignKey(
+        Artist,
+        on_delete=models.CASCADE,
+        null=True
+    )
     title = models.CharField(
         max_length=222
     )
@@ -197,7 +203,9 @@ class Vinyl(models.Model):
         null=True,
         blank=True
     )
-    price = models.FloatField(
+    price = models.DecimalField(
+        decimal_places=2,
+        max_digits=7,
         validators=[
             MinValueValidator(0.01),
             MaxValueValidator(1000000),
@@ -221,14 +229,15 @@ class Vinyl(models.Model):
         null=True,
         blank=True
     )
-    style = ChainedForeignKey(Style,
-                              chained_field='genre',
-                              chained_model_field='genre',
-                              show_all=False,
-                              sort=True,
-                              null=True,
-                              blank=True
-                              )
+    style = ChainedForeignKey(
+        Style,
+        chained_field='genre',
+        chained_model_field='genre',
+        show_all=False,
+        sort=True,
+        null=True,
+        blank=True
+    )
     tracklist = models.TextField(
         null=True,
         blank=True
@@ -243,11 +252,21 @@ class Vinyl(models.Model):
         null=True,
         blank=True
     )
-    user = models.ForeignKey(AppUser,
-                             on_delete=models.CASCADE,
-                             null=True)
+    user = models.ForeignKey(
+        AppUser,
+        on_delete=models.CASCADE,
+        null=True)
     added_on = models.DateTimeField(
         auto_now_add=True
+    )
+    digital = models.BooleanField(
+        default=False,
+        null=True,
+        blank=True,
+    )
+    youtube_link = models.URLField(
+        null=True,
+        blank=True,
     )
 
     class Meta:
@@ -267,14 +286,6 @@ class DJBooking(models.Model):
     date = models.DateField()
     duration = models.PositiveIntegerField()
     created_on = models.DateTimeField(auto_now_add=True)
-
-
-class VinylPurchase(models.Model):
-    # TODO add user
-    user = models.ForeignKey(AppUser, on_delete=models.CASCADE)
-    vinyl = models.ForeignKey(Vinyl, on_delete=models.CASCADE)
-    quantity = models.PositiveIntegerField()
-    purchased_on = models.DateTimeField(auto_now_add=True)
 
 
 class Gender(ChoicesEnumMixin, Enum):
@@ -309,6 +320,10 @@ class Profile(models.Model):
     gender = models.CharField(
         max_length=Gender.max_len(),
         choices=Gender.choices(),
+        null=True,
+    )
+    image = models.ImageField(
+        upload_to='profiles/',
         null=True,
     )
     user = models.OneToOneField(
@@ -350,3 +365,89 @@ class Article(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Order(models.Model):
+    # TODO add user
+    user = models.ForeignKey(
+        Profile,
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+    )
+    purchased_on = models.DateTimeField(
+        auto_now_add=True,
+    )
+    complete = models.BooleanField(
+        default=False,
+    )
+    transaction_id = models.CharField(
+        max_length=100,
+        null=True,
+    )
+
+    @property
+    def shipping(self):
+        shipping = False
+        order_items = self.orderitem_set.all()
+        for i in order_items:
+            if not i.vinyl.digital:
+                shipping = True
+        return shipping
+
+    @property
+    def get_cart_total(self):
+        order_items = self.orderitem_set.all()
+        total = sum([item.get_total for item in order_items])
+        return total
+
+    @property
+    def get_cart_items(self):
+        order_items = self.orderitem_set.all()
+        total = sum([item.quantity for item in order_items])
+        return total
+
+    def __str__(self):
+        return self.transaction_id
+
+
+class OrderItem(models.Model):
+    vinyl = models.ForeignKey(
+        Vinyl,
+        on_delete=models.SET_NULL,
+        null=True,
+    )
+    order = models.ForeignKey(
+        Order,
+        on_delete=models.SET_NULL,
+        null=True,
+    )
+    quantity = models.IntegerField(
+        default=0,
+        null=True,
+        blank=True,
+    )
+    date_added = models.DateTimeField(
+        auto_now_add=True,
+    )
+
+    @property
+    def get_total(self):
+        total = self.vinyl.price * self.quantity
+        return total
+
+    def __str__(self):
+        return f'{self.vinyl.artist} - {self.vinyl.title}'
+
+
+class ShippingAddress(models.Model):
+    user = models.ForeignKey(Profile, on_delete=models.SET_NULL, null=True, )
+    order = models.ForeignKey(Order, on_delete=models.SET_NULL, null=True, )
+    address = models.CharField(max_length=200, null=False, )
+    city = models.CharField(max_length=200, null=False, )
+    state = models.CharField(max_length=200, null=False, )
+    zipcode = models.CharField(max_length=200, null=False, )
+    date_added = models.DateTimeField(auto_now_add=True, )
+
+    def __str__(self):
+        return self.address

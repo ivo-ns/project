@@ -3,7 +3,7 @@
 
 {% block content %}
 
-    <img src="{% static 'images/404.jpg' %}" alt="404" href="{% url 'index' %}" class="center"
-         style="max-width: 100%; height: auto">
+    <a href="{% url 'index' %}"><img src="{% static 'images/404.jpg' %}" alt="404"
+                                     style="width: 100%; object-fit: fill;"></a>
 
 {% endblock %}

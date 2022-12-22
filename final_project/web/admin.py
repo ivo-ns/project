@@ -3,7 +3,8 @@ from django.contrib.auth import get_user_model
 from django.contrib.auth import admin as auth_admin
 
 from final_project.web.forms import SignUpForm, VinylAddForm
-from final_project.web.models import Genre, Style, Vinyl, RecordLabel, Artist, Profile, Article
+from final_project.web.models import Genre, Style, Vinyl, RecordLabel, Artist, Profile, Article, Order, \
+    ShippingAddress, OrderItem
 
 UserModel = get_user_model()
 
@@ -88,3 +89,21 @@ class ArtistAdmin(admin.ModelAdmin):
     }
     ordering = ('name',)
     list_display = ['name', 'slug', 'style', 'location', 'booking_fee_per_hour']
+
+
+@admin.register(Order)
+class OrderAdmin(admin.ModelAdmin):
+    ordering = ('transaction_id',)
+    list_display = ('transaction_id', 'user', 'purchased_on', 'complete',)
+
+
+@admin.register(ShippingAddress)
+class ShippingAddressAdmin(admin.ModelAdmin):
+    pass
+
+@admin.register(OrderItem)
+class VinylPurchaseItemAdmin(admin.ModelAdmin):
+    ordering = ('order',)
+    list_display = ('vinyl', 'order', 'quantity', 'date_added',)
+
+

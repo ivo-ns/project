@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <a href="{% url 'index' %}"><img src="{% static 'images/500.jpg' %}" alt="404"
+                                     style="width: 100%; object-fit: fill;"></a>
+
+{% endblock %}

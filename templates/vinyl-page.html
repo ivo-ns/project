@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}<title>{{ vinyl.artist }} - {{ vinyl.title }}</title> {% endblock %}
 
@@ -10,8 +11,15 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="images p-3">
-                                <div class="text-center p-4"><img id="main-image" src="{{ vinyl.cover_art.url }}"
-                                                                  width="100%"/></div>
+                                {% if vinyl.cover_art %}
+                                    <div class="text-center p-4"><img id="main-image" src="{{ vinyl.cover_art.url }}"
+                                                                      width="100%"/></div>
+                                {% else %}
+                                    <div class="text-center p-4"><img id="main-image"
+                                                                      src="{% static 'images/default_vinyl_pic.jpg' %}"
+                                                                      width="100%"/></div>
+                                {% endif %}
+
 
                             </div>
                         </div>
@@ -35,12 +43,19 @@
                                 </div>
                                 <div>Style: <a href="{% url 'style page' slug=vinyl.style.slug %}">{{ vinyl.style }}</a>
                                 </div>
-
+                                <div>Condition: {{ vinyl.condition }}
+                                </div>
+                                <br>
                                 <div class="price d-flex flex-row align-items-center"><span
-                                        class="act-price"><strong>${{ vinyl.price|floatformat:2 }}</strong></span>
+                                        class="act-price"><strong><h2>${{ vinyl.price|floatformat:2 }}</h2></strong></span>
                                 </div>
                                 <div class="cart mt-4 align-items-center">
-                                    <button class="btn btn-dark text-uppercase mr-2 px-4">Add to cart</button>
+                                    <button data-product="{{ vinyl.pk }}" data-action="add" class="btn btn-dark text-uppercase mr-2 px-4 update-cart">Add to cart</button>
+                                    {% if request.user == vinyl.user or request.user.is_superuser %}
+                                        <a class="btn btn-dark text-uppercase mr-2 px-4"
+                                           href="{% url 'vinyl edit' pk=vinyl.pk %}">Edit</a>
+                                        <button class="btn btn-danger text-uppercase mr-2 px-4">Delete</button>
+                                    {% endif %}
                                     <i class="fa fa-heart text-muted"></i> <i class="fa fa-share-alt text-muted"></i>
                                 </div>
 
@@ -51,5 +66,16 @@
             </div>
         </div>
     </div>
+    {% if vinyl.youtube_link %}
+        <div style="justify-content: center;display: flex">
 
+            <div>
+                <iframe width="560" height="315"
+                        src="{{ vinyl.youtube_link }}"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+            </div>
+        </div>
+    {% endif %}
 {% endblock %}

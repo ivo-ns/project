@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
     <br>
@@ -27,6 +28,7 @@
     <hr style="width: 85%; margin:auto">
     <br>
     <h2 style="text-align: center">Releases</h2>
+    <br>
     <div class="container">
         <div class="row" style="display: flex;align-items: center;justify-content: center;">
             {% for vinyl in vinyl_same_genre %}
@@ -34,7 +36,13 @@
 
                     <div class="card">
                         <div class="card-image">
-                            <img src="{{ vinyl.cover_art.url }}" alt="vinyl_cover" class="card-img-top">
+                            {% if vinyl.cover_art %}
+                                <img src="{{ vinyl.cover_art.url }}" alt="vinyl_cover" class="card-img-top">
+                            {% else %}
+                                <img src="{% static 'images/default_vinyl_pic.jpg' %}" alt="vinyl_cover"
+                                     class="card-img-top">
+
+                            {% endif %}
                         </div>
                         <div class="card-body">
                             <div class="card-title">
@@ -49,7 +57,7 @@
                                     href="{% url 'label page' slug=vinyl.record_label.slug %}">{{ vinyl.record_label.name }}</a>
                             </div>
                             <hr>
-                            <button class="btn btn-outline-secondary add-btn">Add to Cart</button>
+                            <button data-product="{{ vinyl.pk }}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
                             <a class="btn btn-outline-success" href="{% url 'vinyl page' pk=vinyl.pk %}">View</a>
                             <h7 style="display: inline-block;float: right;margin-top: 5px">
                                 <b>${{ vinyl.price|floatformat:2 }}</b>

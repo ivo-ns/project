@@ -21,8 +21,14 @@
                 <div class="col-md-3">
                     <div class="card">
                         <div class="card-image">
-                            <img src="{{ vinyl.cover_art.url }}" alt="vinyl_cover" class="card-img-top"
-                                 style="height: 300px;object-fit: cover">
+                            {% if vinyl.cover_art %}
+                                <img src="{{ vinyl.cover_art.url }}" alt="vinyl_cover" class="card-img-top"
+                                     style="height: 300px;object-fit: cover">
+                            {% else %}
+                                <img src="{% static 'images/default_vinyl_pic.jpg' %}" alt="default_vinyl_cover"
+                                     class="card-img-top"
+                                     style="height: 300px;object-fit: cover">
+                            {% endif %}
                         </div>
                         <div class="card-body">
                             <div class="card-title">
@@ -37,7 +43,7 @@
                                     href="{% url 'label page' slug=vinyl.record_label.slug %}">{{ vinyl.record_label.name }}</a>
                             </div>
                             <hr>
-                            <button class="btn btn-outline-secondary add-btn">Add to Cart</button>
+                            <button data-product="{{ vinyl.pk }}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
                             <a class="btn btn-outline-success" href="{% url 'vinyl page' pk=vinyl.pk %}">View</a>
                             <h7 style="display: inline-block;float: right;margin-top: 5px">
                                 <b>${{ vinyl.price|floatformat:2 }}</b>
@@ -60,8 +66,14 @@
 
                     <div class="card">
                         <div class="card-image">
-                            <img src="{{ vinyl.cover_art.url }}" alt="vinyl_cover" class="card-img-top">
-                        </div>
+                            {% if vinyl.cover_art %}
+                                <img src="{{ vinyl.cover_art.url }}" alt="vinyl_cover" class="card-img-top"
+                                     style="height: 300px;object-fit: cover">
+                            {% else %}
+                                <img src="{% static 'images/default_vinyl_pic.jpg' %}" alt="default_vinyl_cover"
+                                     class="card-img-top"
+                                     style="height: 300px;object-fit: cover">
+                            {% endif %}                        </div>
                         <div class="card-body">
                             <div class="card-title">
                                 Artist(s): <a
@@ -75,7 +87,7 @@
                                     href="{% url 'label page' slug=vinyl.record_label.slug %}">{{ vinyl.record_label.name }}</a>
                             </div>
                             <hr>
-                            <button class="btn btn-outline-secondary add-btn">Add to Cart</button>
+                            <button data-product="{{ vinyl.pk }}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
                             <a class="btn btn-outline-success" href="{% url 'vinyl page' pk=vinyl.pk %}">View</a>
                             <h7 style="display: inline-block;float: right;margin-top: 5px">
                                 <b>${{ vinyl.price|floatformat:2 }}</b>
@@ -98,8 +110,14 @@
                 <div class="col-md-3">
                     <div class="card">
                         <div class="card-image">
-                            <img src="{{ vinyl.cover_art.url }}" alt="vinyl_cover" class="card-img-top"
-                                 style="height: 300px;object-fit: cover">
+                            {% if vinyl.cover_art %}
+                                <img src="{{ vinyl.cover_art.url }}" alt="vinyl_cover" class="card-img-top"
+                                     style="height: 300px;object-fit: cover">
+                            {% else %}
+                                <img src="{% static 'images/default_vinyl_pic.jpg' %}" alt="default_vinyl_cover"
+                                     class="card-img-top"
+                                     style="height: 300px;object-fit: cover">
+                            {% endif %}
                         </div>
                         <div class="card-body">
                             <div class="card-title">
@@ -114,7 +132,7 @@
                                     href="{% url 'label page' slug=vinyl.record_label.slug %}">{{ vinyl.record_label.name }}</a>
                             </div>
                             <hr>
-                            <button class="btn btn-outline-secondary add-btn">Add to Cart</button>
+                            <button data-product="{{ vinyl.pk }}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
                             <a class="btn btn-outline-success" href="{% url 'vinyl page' pk=vinyl.pk %}">View</a>
                             <h7 style="display: inline-block;float: right;margin-top: 5px">
                                 <b>${{ vinyl.price|floatformat:2 }}</b>

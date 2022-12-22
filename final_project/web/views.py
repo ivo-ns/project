@@ -1,12 +1,16 @@
+import json
+
 from django.contrib.auth import get_user_model, views as auth_views, login
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.db.models import Q
-from django.shortcuts import redirect
+from django.http import JsonResponse
+from django.shortcuts import redirect, render
 from django.views import generic as views
 from django.urls import reverse_lazy
+import datetime
 
 from .forms import SignUpForm, ArtistAddForm, VinylAddForm, LabelAddForm, SignInForm
-from .models import Artist, Genre, Vinyl, Article, Style, RecordLabel
+from .models import Artist, Genre, Vinyl, Article, Style, RecordLabel, Profile, Order, OrderItem, ShippingAddress
 
 UserModel = get_user_model()
 
@@ -62,6 +66,12 @@ class ProfileView(views.DetailView):
     model = UserModel
     template_name = 'profile.html'
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['user'] = Profile.objects.filter(pk=self.request.user.pk)
+        context['vinyls'] = Vinyl.objects.filter(user=self.request.user)
+        return context
+
 
 # class IndexView(views.TemplateView):
 #     template_name = 'index.html'
@@ -83,17 +93,27 @@ class IndexView(views.ListView):
         context['headline'] = Article.objects.filter(headline=True).first()
         return context
 
+def vinylstorefbview(request):
+    if request.user.is_authenticated:
+        customer = request.user.profile
+        order, created = Order.objects.get_or_create(user=customer, complete=False)
+        items = order.orderitem_set.all()
+        cartItems = order.get_cart_items
+    else:
+        items = []
+        order = {'get_cart_total': 0, 'get_cart_items': 0, 'shipping': False}
+        cartItems = order['get_cart_items']
 
-class VinylStoreView(views.TemplateView):
-    template_name = 'vinyls.html'
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['vinyls'] = Vinyl.objects.all().order_by('-added_on')[:4]
-        context['vinyls_price'] = Vinyl.objects.all().order_by('-price')[:4]
-        context['vinyls_latest'] = Vinyl.objects.all().order_by('-release_date')[:4]
-
-        return context
+    vinyls = Vinyl.objects.all().order_by('-added_on')[:4]
+    vinyls_price = Vinyl.objects.all().order_by('-price')[:4]
+    vinyls_latest = Vinyl.objects.all().order_by('-release_date')[:4]
+    context = {
+        'vinyls': vinyls,
+        'vinyls_price': vinyls_price,
+        'vinyls_latest': vinyls_latest,
+        'cartItems': cartItems,
+    }
+    return render(request, 'vinyls.html', context)
 
 
 class MarketplaceView(views.ListView):
@@ -101,7 +121,7 @@ class MarketplaceView(views.ListView):
     model = Vinyl
 
 
-class BuyVinylView(views.TemplateView):
+class VinylBuyView(views.TemplateView):
     template_name = 'buy.html'
 
     def get_context_data(self, **kwargs):
@@ -140,7 +160,7 @@ class BuyVinylView(views.TemplateView):
         return context
 
 
-class SellVinylView(LoginRequiredMixin, views.CreateView):
+class VinylSellView(LoginRequiredMixin, views.CreateView):
     template_name = 'sell.html'
     form_class = VinylAddForm
 
@@ -153,12 +173,27 @@ class SellVinylView(LoginRequiredMixin, views.CreateView):
 
 
 class VinylEditView(LoginRequiredMixin, views.UpdateView):
-    pass
+    template_name = 'vinyl-edit.html'
+    form_class = VinylAddForm
+    queryset = Vinyl.objects.all()
+
+    def get_success_url(self):
+        return reverse_lazy('vinyl page', kwargs={
+            'pk': self.object.pk,
+        })
+
+    def form_valid(self, form):
+        print(form.cleaned_data)
+        return super().form_valid(form)
 
 
 class VinylDetailsView(views.DetailView):
     model = Vinyl
     template_name = 'vinyl-page.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        return context
 
 
 class VinylDeleteView(views.DeleteView):
@@ -305,18 +340,111 @@ class ArticleDetailView(views.DetailView):
     template_name = 'article.html'
 
 
-class NotFoundView(views.TemplateView):
-    template_name = "404.html"
+# class NotFoundView(views.TemplateView):
+#     template_name = "404.html"
+#
+#     @classmethod
+#     def get_rendered_view(cls):
+#         as_view_fn = cls.as_view()
+#
+#         def view_fn(request):
+#             response = as_view_fn(request)
+#             # this is what was missing before
+#             response.status_code = 404
+#             response.render()
+#             return response
+#
+#         return view_fn
 
-    @classmethod
-    def get_rendered_view(cls):
-        as_view_fn = cls.as_view()
 
-        def view_fn(request):
-            response = as_view_fn(request)
-            # this is what was missing before
-            response.status_code = 404
-            response.render()
-            return response
+def cart(request):
+    if request.user.is_authenticated:
+        customer = request.user.profile
+        order, created = Order.objects.get_or_create(user=customer, complete=False)
+        items = order.orderitem_set.all()
+        cartItems = order.get_cart_items
 
-        return view_fn
+    else:
+        items = []
+        order = {'get_cart_total': 0, 'get_cart_items': 0, 'shipping': False}
+        cartItems = order['get_cart_items']
+
+    context = {
+        'items': items,
+        'order': order,
+        'cartItems': cartItems,
+    }
+    return render(request, 'cart.html', context)
+
+
+def checkout(request):
+    if request.user.is_authenticated:
+        customer = request.user.profile
+        order, created = Order.objects.get_or_create(user=customer, complete=False)
+        items = order.orderitem_set.all()
+        cartItems = order.get_cart_items
+
+    else:
+        items = []
+        order = {'get_cart_total': 0, 'get_cart_items': 0, 'shipping': False}
+        cartItems = order['get_cart_items']
+
+    context = {
+        'items': items,
+        'order': order,
+        'cartItems': cartItems,
+    }
+    return render(request, 'checkout.html', context)
+
+
+def updateItem(request):
+    data = json.loads(request.body)
+    productId = data['productId']
+    action = data['action']
+    print('Action:', action)
+    print('Product:', productId)
+
+    customer = request.user.profile
+    vinyl = Vinyl.objects.get(pk=productId)
+    order, created = Order.objects.get_or_create(user=customer, complete=False)
+
+    orderItem, created = OrderItem.objects.get_or_create(order=order, vinyl=vinyl)
+
+    if action == 'add':
+        orderItem.quantity = (orderItem.quantity + 1)
+    elif action == 'remove':
+        orderItem.quantity = (orderItem.quantity - 1)
+
+    orderItem.save()
+    if orderItem.quantity <= 0:
+        orderItem.delete()
+    return JsonResponse('Item was added', safe=False)
+
+
+def processOrder(request):
+    transaction_id = datetime.datetime.now().timestamp()
+    data = json.loads(request.body)
+
+    if request.user.is_authenticated:
+        customer = request.user.profile
+        order, created = Order.objects.get_or_create(user=customer, complete=False)
+        total = float(data['form']['total'])
+        order.transaction_id = transaction_id
+
+        if total == order.get_cart_total:
+            order.complete = True
+        order.save()
+
+        if order.shipping == True:
+            ShippingAddress.objects.create(
+                user=customer,
+                order=order,
+                address=data['shipping']['address'],
+                city=data['shipping']['city'],
+                state=data['shipping']['state'],
+                zipcode=data['shipping']['zipcode'],
+            )
+    else:
+        print('User is not logged in...')
+
+    return JsonResponse('Payment submitted..', safe=False)
